@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-pink: #F472B6;
+  --color-brand-indigo: #6366F1;
+  --color-brand-cyan: #22D3EE;
+  --color-brand-success: #10B981;
+  --color-brand-error: #EF4444;
+  --color-bg-slate: #020617;
+  --color-bg-dark: #090D1A;
+  --color-text-primary: #F1F5F9;
+  --color-text-muted: #94A3B8;
+  --color-bg-card: #1E293B;
+  --color-border-slate: #334155;
+  
+  --animate-pulse-slow: pulse-slow 6s infinite ease-in-out;
+  --animate-float: float 4s infinite ease-in-out;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(1) translate(0px, 0px);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.15) translate(10px, -10px);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #020617;
+  color: #F1F5F9;
+}
+
+/* Custom Webkit scrollbar for premium dark feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+

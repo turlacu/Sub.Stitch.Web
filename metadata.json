@@ -1,0 +1,6 @@
+{
+  "name": "Sub.Stich Website",
+  "description": "Premium AI subtitle translation marketing website. Fast, context-aware translations keeping SRT original timestamps untouched.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

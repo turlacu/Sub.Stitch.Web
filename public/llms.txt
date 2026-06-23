@@ -1,0 +1,28 @@
+# Sub.Stich
+
+> Sub.Stich - Premium AI subtitle translation and localization platform engineered specifically for entertainment media.
+
+## Overview
+Sub.Stich is not a generic machine translation wrapper. It is a highly specialized localization suite designed specifically for subtitle editing and context-aware translations. It preserves raw, sub-millisecond timeline grids, resolves character gender/social relationships, dynamically fits word ranges to standard reading-speed metrics, and adapts to complex cultural slang, idioms, and humor without introducing timing or sync drift.
+
+## Core Pillars & Differentiators
+
+### 1. Pacing & Timecode Integrity
+- **0ms Timing Drift Guarantee:** Sub.Stich strictly treats subtitle timecodes as read-only constants. Pointers, offsets, and millisecond properties (.SRT, .WebVTT, .SUB) are retained down to the raw grid level.
+- **Visual Restructure Safeguards:** Eliminates frame slippage when breaking single-line blocks into multi-line configurations.
+
+### 2. High Contextual & Cultural Awareness
+- **Slang-Adaptive Translation Engine:** Successfully maps complex regional humor, idioms, metaphors, and niche slangs into target locales instead of doing naive literal translations.
+- **Adaptive Character Voices:** Adjusts tones from Creative, Accurate, to Casual while maintaining localized dialog consistency.
+
+### 3. Long-Form Context Caching (Sequential Reconstruction Engine)
+- **Continuous Scene Parsing:** Feeds adjoining dialogue units sequentially to understand background relationships, pronouns, gender markers, and running inside jokes across the entire length of the media file.
+
+## Technical Specifications
+- **Supported File Formats:** `.srt` (SubRip), `.vtt` (WebVTT), `.txt` (Plain text dialogue sheets), `.sub` (MicroDVD).
+- **Processing Rate:** Translates and reconstructs a standard 500-line subtitle file in under 15 seconds.
+- **Privacy Guarantee:** All transactions are processed securely via SSL in temporary RAM. No raw uploads or translated files are cached on disk for more than 1 hour post-download.
+
+## Resources
+- [Main Application](https://sub.turlacu.ro/)
+- [SEO Metadata Verification](/metadata.json)

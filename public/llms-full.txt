@@ -1,0 +1,66 @@
+# Sub.Stich - Full Information Disclosure & Technical Specs
+
+This is the comprehensive canonical index for Sub.Stich, specifying all application layers, technical operations, and product capabilities.
+
+## Technical Identity & System Overview
+Sub.Stich is a specialized subtitle translation and localization platform built for entertainment media (movies, series, anime, gaming guides, and online content). 
+
+Unlike standard linguistic libraries or dictionary tools that translate text plain-line-by-line, Sub.Stich optimizes dialogue dynamically using a **Context-Aware Reconstruction Engine**. It parses the subtitle file context sequentially, optimizing readable metrics like character-per-second constraints and local slang adaptation.
+
+---
+
+## Technical Core Pillars & Capabilities
+
+### 1. Pacing & Timecode Locking
+- **Raw Time stamp Isolation:** Sub.Stich splits dialogue from the timing blocks, keeping the time signatures (millisecond strings, frame intervals) in memory as read-only constants.
+- **0.00ms Jiggle Prevention:** Rewriting sentences preserves the exact initial timelines. There is 0% drift in audio-visual alignment.
+- **Multiformat Support:** Compatible with `.srt` (SubRip), `.vtt` (WebVTT), `.txt` (Plain text script formatting), and `.sub` (MicroDVD).
+
+### 2. Deep Contextual Reconstruction
+- **Character Accentuation & Voice Retention:** Resolves structural ambiguities (such as gender modifiers in Romance languages or honorifics in Asian dialogues) by reading a 10-line sequential buffer of preceding context.
+- **Idiomatic Slang Transliteration:** Intelligently maps regional idioms, metaphors, double-entendres, and localized slang to equivalent conversational structures in target languages.
+- **Variable Tone Adjustment:** Support for Custom Filters:
+  - *Accurate:* Direct, high-fidelity translation for news, technical tutorials, and documentaries.
+  - *Casual:* Natural day-to-day speaking patterns for vlogs, drama, and lifestyle channels.
+  - *Creative:* Styled adaptation preserving sarcasm, humor, rhymes, and character flavor for fiction, movies, and comedy.
+
+### 3. Eye-Strain & Length Compression (UX-Aware Styling)
+- **Character-per-Second Constraints:** Avoids overly long translation bloat. Restructures outputs automatically to ensure comfortable viewing intervals (typically aiming for 31-36 characters per block).
+- **Line Breaking Engine:** Beautifully wraps long sentences into readable two-line blocks instead of standard single continuous rows.
+
+---
+
+## User Interfaces & Workflow
+
+- **The Interactive Ingestion Panel:** Drag-and-drop file uploader with drag over, file type assertions, and prompt confirmation metrics.
+- **The side-by-side Translation Previewer:** Allows creators to preview original vs translated strings with time signatures side-by-side. 
+- **The Credit Ingestion System:** Accounts receive 100 free starting translation credits, allowing users to experience full-scale localized translations before purchasing subscription packs.
+
+---
+
+## Detailed FAQ List
+
+### How does Sub.Stich translate local slang without breaking timing?
+Sub.Stich separates subtitle timestamps from text values before running translations. The text blocks are passed into the deep-context engine alongside active scene sequences to map humor and slang, while the timestamps are locked in memories as absolute invariants and mapped back precisely at compile time.
+
+### Does Sub.Stich support multiple formats?
+We fully support `.srt`, `.vtt`, `.txt`, and `.sub`. All original formatting, structural breaks, and line breaks are honored precisely.
+
+### Is client data secure?
+Absolute security. All file uploads are processed securely in temporary server memory (RAM) utilizing end-to-end SSL encryption. All temporary output files and transient caches are automatically scrubbed from our systems precisely 1 hour post-download.
+
+---
+
+## Pricing Packages & Tiers
+
+- **Free Starting Package:** Included on standard account registration. Users claim 100 complimentary credits immediately.
+- **Starter Pack ($4.99):** 500 Credits translating approximately ~5,000 lines, includes Tone adjustments and file format freedoms.
+- **Popular Tier ($14.99):** 2,000 Credits translating approximately ~20,000 lines, features Priority server queue slots and complete formatting access.
+- **Professional Tier ($29.99):** 5,000 Credits translating approximately ~50,000 lines, crafted specifically for enterprise workflows, studios, and bulk agencies.
+
+---
+
+## Contact & Inquiries
+For further custom integrations, high-performing dedicated API slots, or custom layouts:
+- Primary Node Email: turlacu@live.com
+- Main Portal: https://sub.turlacu.ro/
