@@ -1,6 +1,6 @@
 # Sub.Stitch Website
 
-Static Vite/React marketing website for Sub.Stitch. The actual subtitle application, account creation, billing, and translation workflow live at `https://sub.turlacu.ro/`.
+Static Vite/React marketing website for Sub.Stitch. The actual subtitle application, account creation, billing, and translation workflow live at `https://studio.substitch.app/`.
 
 ## Requirements
 

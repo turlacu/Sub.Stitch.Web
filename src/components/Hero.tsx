@@ -18,7 +18,7 @@ interface Particle {
 
 export default function Hero() {
   const { t, marketingContent } = useLanguage();
-  const appUrl = "https://sub.turlacu.ro/";
+  const appUrl = "https://studio.substitch.app/";
 
   // Background animated nodes
   const [particles, setParticles] = useState<Particle[]>([]);

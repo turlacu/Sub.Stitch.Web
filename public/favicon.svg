@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Sub.Stitch">
+  <defs>
+    <linearGradient id="mark" x1="10" y1="54" x2="54" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F472B6"/>
+      <stop offset="1" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#020617"/>
+  <rect x="9" y="9" width="46" height="46" rx="10" fill="url(#mark)"/>
+  <g fill="none" stroke="#020617" stroke-width="4.75" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m19 25 12 12"/>
+    <path d="m17 37 12-12 4-6"/>
+    <path d="M14 19h24"/>
+    <path d="M24 13h2"/>
+    <path d="m53 51-10-20-10 20"/>
+    <path d="M37 43h12"/>
+  </g>
+</svg>

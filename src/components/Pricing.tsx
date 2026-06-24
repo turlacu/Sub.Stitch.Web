@@ -86,7 +86,7 @@ export default function Pricing() {
                 <div className="relative z-10 mt-8 pt-4">
                   <a
                     id={`pricing-btn-${tier.id}`}
-                    href="https://sub.turlacu.ro/"
+                    href="https://studio.substitch.app/"
                     target="_blank"
                     referrerPolicy="no-referrer"
                     rel="noopener noreferrer"

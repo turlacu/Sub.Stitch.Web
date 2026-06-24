@@ -94,7 +94,7 @@ export default function Faq() {
           {content.faq.footerPrefix}
           <a
             id="faq-app-link"
-            href="https://sub.turlacu.ro/"
+            href="https://studio.substitch.app/"
             target="_blank"
             referrerPolicy="no-referrer"
             rel="noopener noreferrer"

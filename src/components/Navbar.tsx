@@ -128,7 +128,7 @@ export default function Navbar() {
 
               <a
                 id="nav-cta-desktop"
-                href="https://sub.turlacu.ro/"
+                href="https://studio.substitch.app/"
                 target="_blank"
                 referrerPolicy="no-referrer"
                 rel="noopener noreferrer"
@@ -231,7 +231,7 @@ export default function Navbar() {
                 <div className="pt-4 border-t border-[#334155]/60 px-4">
                   <a
                     id="nav-cta-mobile"
-                    href="https://sub.turlacu.ro/"
+                    href="https://studio.substitch.app/"
                     target="_blank"
                     referrerPolicy="no-referrer"
                     rel="noopener noreferrer"

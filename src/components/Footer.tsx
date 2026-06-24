@@ -70,7 +70,7 @@ export default function Footer() {
               </p>
               <a
                 id="footer-app-cta"
-                href="https://sub.turlacu.ro/"
+                href="https://studio.substitch.app/"
                 target="_blank"
                 referrerPolicy="no-referrer"
                 rel="noopener noreferrer"
@@ -99,7 +99,7 @@ export default function Footer() {
           <div className="flex gap-4">
             <a href="https://subtitletranslate.turlacu.ro/" className="hover:underline">subtitletranslate.turlacu.ro</a>
             <span>&bull;</span>
-            <a href="https://sub.turlacu.ro/" className="hover:underline">sub.turlacu.ro</a>
+            <a href="https://studio.substitch.app/" className="hover:underline">studio.substitch.app</a>
           </div>
         </div>
 

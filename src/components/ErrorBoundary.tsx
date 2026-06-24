@@ -32,7 +32,7 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
               Please refresh the page or open the subtitle app directly.
             </p>
             <a
-              href="https://sub.turlacu.ro/"
+              href="https://studio.substitch.app/"
               className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#F472B6] to-[#6366F1] px-5 py-3 text-sm font-bold text-slate-950"
             >
               Open App

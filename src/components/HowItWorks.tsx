@@ -74,7 +74,7 @@ export default function HowItWorks() {
         <div className="mt-16 text-center">
           <a
             id="how-it-works-start-cta"
-            href="https://sub.turlacu.ro/"
+            href="https://studio.substitch.app/"
             target="_blank"
             referrerPolicy="no-referrer"
             rel="noopener noreferrer"
