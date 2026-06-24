@@ -14,7 +14,7 @@ export const FRENCH: MarketingContent = {
   problem: {
     badge: "L'écart de Traduction",
     title: "Arrêtez de corriger vos sous-titres à la main.",
-    subtitle: "Les traducteurs automatiques classiques effectuent un mot-à-mot aveugle, gâchant le dialogue. Sub.Stich saisit l'ensemble de la scène ou de l'intrigue.",
+    subtitle: "Les traducteurs automatiques classiques effectuent un mot-à-mot aveugle, gâchant le dialogue. Sub.Stitch saisit l'ensemble de la scène ou de l'intrigue.",
     basicCard: {
       title: "Traducteur Automatique Standard",
       desc: "Traduction mécanique ligne par ligne",
@@ -31,14 +31,14 @@ export const FRENCH: MarketingContent = {
       footer: "Représente des heures de correction manuelle en bout de chaîne."
     },
     subaiCard: {
-      title: "Outil de Traduction Sub.Stich",
+      title: "Outil de Traduction Sub.Stitch",
       desc: "Analyseur de dialogue contextuel",
       recBadge: "RECOMMANDÉ",
       successLabel: "✓ Contexte préservé",
-      successEx: "*Sens idéal : Sub.Stich assimile l'expression familière et propose l'équivalent parfait en français.",
+      successEx: "*Sens idéal : Sub.Stitch assimile l'expression familière et propose l'équivalent parfait en français.",
       traits: [
         "Reconstitue la cohérence de scène pour bien attribuer les genres et pronoms",
-        "Traduce naturellement les expressions familières et l'humour local",
+        "Traduit naturellement les expressions familières et l'humour local",
         "Assure un confort de lecture optimal pour l'oeil du spectateur",
         "Garantit des codes de temps SRT identiques à la milliseconde près"
       ],
@@ -47,7 +47,7 @@ export const FRENCH: MarketingContent = {
   },
   howItWorks: {
     badge: "Processus Simple",
-    title: "Comment fonctionne Sub.Stich",
+    title: "Comment fonctionne Sub.Stitch",
     subtitle: "Traduisez vos sous-titres en quatre étapes simples et rapides. Un épisode complet traité en moins d'une minute.",
     steps: [
       { step: "ÉTAPE 01", title: "Déposer", desc: "Glissez vos fichiers de sous-titres .SRT, .VTT, .TXT ou .SUB de manière sécurisée." },
@@ -60,7 +60,7 @@ export const FRENCH: MarketingContent = {
   features: {
     badge: "Fonctionnalités Clés",
     title: "Une localisation de qualité professionnelle",
-    subtitle: "Les traducteurs basiques traitent les sous-titres comme de simples textes bruts. Sub.Stich les gère comme une intrigue vivante.",
+    subtitle: "Les traducteurs basiques traitent les sous-titres comme de simples textes bruts. Sub.Stitch les gère comme une intrigue vivante.",
     items: [
       { id: "context", title: "Moteur Contextuel IA", description: "Analyse les lignes précédentes pour saisir l'humour, la complicité et l'intrigue.", badge: "Unique" },
       { id: "batch", title: "Multi-Formats", description: "Prise en charge de tous les formats professionnels : .SRT, .VTT, .TXT ou .SUB.", badge: "Universel" },
@@ -77,13 +77,14 @@ export const FRENCH: MarketingContent = {
     drift: "± 0.00ms de dérive assurée",
     stdDraft: "Aperçu de Traduction Classique :",
     stdWarning: "52 caractères (Fatigue visuelle)",
-    subaiComp: "Optimisation de Longueur Sub.Stich :",
+    subaiComp: "Optimisation de Longueur Sub.Stitch :",
     subaiScore: "31 caractères (Lecture fluide)"
   },
   pricing: {
     badge: "Offre d'Acceuil Incluse",
     title: "Abonnements et Crédits. Boostez votre production.",
     subtitle: "Créez un compte et bénéficiez de 100 crédits offerts à l'inscription. Un crédit traduit environ 10 lignes de sous-titres.",
+    creditNote: "Créez un compte et bénéficiez de 100 crédits offerts à l'inscription.",
     tiers: [
       {
         id: "starter",
@@ -120,10 +121,10 @@ export const FRENCH: MarketingContent = {
     title: "Questions Fréquentes",
     subtitle: "Tout ce qu'il faut savoir sur notre traducteur intelligent de fichiers SRT/VTT.",
     items: [
-      { question: "Est-ce que Sub.Stich modifie mes repères temporels ?", answer: "Non, absolument pas. Sub.Stich traite les timecodes en lecture seule. Notre parser extrait le texte, le traduit, et le réinsère au millième de seconde près à son emplacement d'origine." },
+      { question: "Est-ce que Sub.Stitch modifie mes repères temporels ?", answer: "Non, absolument pas. Sub.Stitch traite les timecodes en lecture seule. Notre parser extrait le texte, le traduit, et le réinsère au millième de seconde près à son emplacement d'origine." },
       { question: "Est-ce comparable à Google Traduction ou DeepL ?", answer: "No. Ces outils traduisent ligne par ligne de manière isolée. Notre moteur 'Context-Aware' traite l'ensemble des répliques adjacentes à la fois pour comprendre l'identité des locuteurs, l'humour, le genre et l'intrigue." },
       { question: "L'inscription est-elle obligatoire ?", answer: "Oui, un compte est nécessaire pour gérer votre solde de manière sécurisée. Nous offrons 100 crédits d'évaluation dès la validation du compte." },
-      { question: "Quels formats de sous-titres sont tolérés ?", answer: "Sub.Stich prend entièrement en charge le SubRip (.srt), WebVTT (.vtt), Texte Brut (.txt) et MicroDVD (.sub), tout en préservant le format d'origine." },
+      { question: "Quels formats de sous-titres sont tolérés ?", answer: "Sub.Stitch prend entièrement en charge le SubRip (.srt), WebVTT (.vtt), Texte Brut (.txt) et MicroDVD (.sub), tout en préservant le format d'origine." },
       { question: "Mes données restent-elles confidentielles ?", answer: "Tout à fait. Toutes les transmissions de fichiers sont cryptées via protocole SSL. Les calculs sont faits en RAM et les copies transitoires sont purgées des serveurs 1 heure après téléchargement." }
     ],
     footerPrefix: "Une autre question d'ordre technique ? Testez directement la ",
@@ -136,11 +137,16 @@ export const FRENCH: MarketingContent = {
     subtitle: "Des questions ? Des retours ? Un besoin volumineux de niveau industriel ? Écrivez-nous.",
     inquiries: "Assistance client",
     replyTime: "Délai moyen de retour de moins de 12 heures.",
-    feedbackTitle: "Suggestions Sub.Stich",
+    feedbackTitle: "Suggestions Sub.Stitch",
     feedbackDesc: "Partagez vos idées de fonctionnalités manquantes, requêtes ou intégrations API.",
     enterpriseTitle: "Plans Entreprise",
     enterpriseDesc: "Obtenez des serveurs dédiés de grande puissance pour vos plateformes ou catalogues.",
     emailSign: "Contact : turlacu@live.com",
+    emailBlockLabel: "E-mail direct",
+    emailBlockTitle: "Envoyez les détails depuis votre boîte mail.",
+    emailBlockDesc: "Indiquez le type de fichier, le volume approximatif de sous-titres, les langues cibles et vos contraintes de workflow.",
+    emailBlockAddressLabel: "Adresse de contact",
+    emailBlockCta: "Envoyer un e-mail à Sub.Stitch",
     successTitle: "Message envoyé avec succès !",
     successDesc: "Nous vous remercions. Votre ticket a été transmis à notre service technique. Nous revenons vers vous rapidement.",
     successBtn: "Écrire une autre note",

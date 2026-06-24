@@ -7,17 +7,7 @@ import { FRENCH } from "./marketing/fr";
 import { PORTUGUESE } from "./marketing/pt";
 import { ITALIAN } from "./marketing/it";
 
-import { OFFLINE_MARKETING_DICTS } from "./marketing/offlineTranslations";
-import { OFFLINE_MARKETING_DICTS_PART2 } from "./marketing/offlineTranslations2";
-import { OFFLINE_MARKETING_DICTS_PART3 } from "./marketing/offlineTranslations3";
-
 export type { MarketingContent };
-
-const OFFLINE_DICTS: Record<string, Record<string, string>> = {
-  ...OFFLINE_MARKETING_DICTS,
-  ...OFFLINE_MARKETING_DICTS_PART2,
-  ...OFFLINE_MARKETING_DICTS_PART3
-};
 
 function deepTranslate(obj: any, dict: Record<string, string>): any {
   if (typeof obj === "string") {
@@ -36,7 +26,25 @@ function deepTranslate(obj: any, dict: Record<string, string>): any {
   return obj;
 }
 
-export const MARKETING_TRANSLATIONS: Record<string, MarketingContent> = {
+function normalizeGeneratedContactCopy(content: MarketingContent, dict: Record<string, string>): MarketingContent {
+  if (dict[ENGLISH.contact.emailBlockLabel]) {
+    return content;
+  }
+
+  return {
+    ...content,
+    contact: {
+      ...content.contact,
+      emailBlockLabel: content.contact.emailSign,
+      emailBlockTitle: content.contact.title,
+      emailBlockDesc: content.contact.subtitle,
+      emailBlockAddressLabel: content.contact.inquiries,
+      emailBlockCta: content.contact.btnSend
+    }
+  };
+}
+
+const BASE_MARKETING_TRANSLATIONS: Record<string, MarketingContent> = {
   en: ENGLISH,
   ro: ROMANIAN,
   de: GERMAN,
@@ -50,21 +58,68 @@ export const MARKETING_TRANSLATIONS: Record<string, MarketingContent> = {
   it: ITALIAN
 };
 
-// Dynamically populate all offline dictionary languages on load
-for (const langCode of Object.keys(OFFLINE_DICTS)) {
-  MARKETING_TRANSLATIONS[langCode] = deepTranslate(ENGLISH, OFFLINE_DICTS[langCode]);
-}
+const cachedMarketingTranslations: Record<string, MarketingContent> = {
+  ...BASE_MARKETING_TRANSLATIONS
+};
+
+const offlineDictionaryLoaders: Record<string, () => Promise<Record<string, Record<string, string>>>> = {
+  "zh-cn": async () => (await import("./marketing/offlineTranslations")).OFFLINE_MARKETING_DICTS,
+  "zh-tw": async () => (await import("./marketing/offlineTranslations")).OFFLINE_MARKETING_DICTS,
+  ja: async () => (await import("./marketing/offlineTranslations")).OFFLINE_MARKETING_DICTS,
+  ko: async () => (await import("./marketing/offlineTranslations")).OFFLINE_MARKETING_DICTS,
+  ru: async () => (await import("./marketing/offlineTranslations2")).OFFLINE_MARKETING_DICTS_PART2,
+  tr: async () => (await import("./marketing/offlineTranslations2")).OFFLINE_MARKETING_DICTS_PART2,
+  nl: async () => (await import("./marketing/offlineTranslations2")).OFFLINE_MARKETING_DICTS_PART2,
+  ar: async () => (await import("./marketing/offlineTranslations2")).OFFLINE_MARKETING_DICTS_PART2,
+  sv: async () => (await import("./marketing/offlineTranslations2")).OFFLINE_MARKETING_DICTS_PART2,
+  no: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  da: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  fi: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  el: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  bg: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  hr: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  hi: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  ta: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3,
+  te: async () => (await import("./marketing/offlineTranslations3")).OFFLINE_MARKETING_DICTS_PART3
+};
 
 export const getMarketingTranslation = (langCode: string): MarketingContent => {
   const normalized = langCode.toLowerCase();
-  if (MARKETING_TRANSLATIONS[normalized]) {
-    return MARKETING_TRANSLATIONS[normalized];
+  if (cachedMarketingTranslations[normalized]) {
+    return cachedMarketingTranslations[normalized];
   }
   // Try partial mapping (e.g. es-ar -> es)
   const prefix = normalized.substring(0, 2);
-  if (MARKETING_TRANSLATIONS[prefix]) {
-    return MARKETING_TRANSLATIONS[prefix];
+  if (cachedMarketingTranslations[prefix]) {
+    return cachedMarketingTranslations[prefix];
   }
   // Ultimate elegant fallback to English
   return ENGLISH;
+};
+
+export const loadMarketingTranslation = async (langCode: string): Promise<MarketingContent> => {
+  const normalized = langCode.toLowerCase();
+  const basePrefix = normalized.substring(0, 2);
+
+  if (cachedMarketingTranslations[normalized]) {
+    return cachedMarketingTranslations[normalized];
+  }
+  if (cachedMarketingTranslations[basePrefix]) {
+    return cachedMarketingTranslations[basePrefix];
+  }
+
+  const loadDictionary = offlineDictionaryLoaders[normalized] || offlineDictionaryLoaders[basePrefix];
+  if (!loadDictionary) {
+    return ENGLISH;
+  }
+
+  const dictionaries = await loadDictionary();
+  const dictionary = dictionaries[normalized] || dictionaries[basePrefix];
+  if (!dictionary) {
+    return ENGLISH;
+  }
+
+  const translated = normalizeGeneratedContactCopy(deepTranslate(ENGLISH, dictionary), dictionary);
+  cachedMarketingTranslations[normalized] = translated;
+  return translated;
 };

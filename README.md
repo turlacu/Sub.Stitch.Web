@@ -1,20 +1,24 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Sub.Stitch Website
 
-# Run and deploy your AI Studio app
+Static Vite/React marketing website for Sub.Stitch. The actual subtitle application, account creation, billing, and translation workflow live at `https://sub.turlacu.ro/`.
 
-This contains everything you need to run your app locally.
+## Requirements
 
-View your app in AI Studio: https://ai.studio/apps/222ea5fa-38f8-42ad-85e5-354c3e555b3c
+- Node.js 22
+- npm
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+```bash
+npm ci
+npm run dev
+```
 
+## Build
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+```bash
+npm run typecheck
+npm run build
+```
+
+The generated static site is emitted to `dist/`.

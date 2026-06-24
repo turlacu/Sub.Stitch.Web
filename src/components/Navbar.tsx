@@ -45,23 +45,23 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center">
             {/* Left side: Logo */}
             <a
               id="nav-logo-link"
               href="#"
-              className="flex items-center gap-2.5 group transition-opacity duration-200"
+              className="justify-self-start flex items-center gap-2.5 group transition-opacity duration-200"
             >
               <div className="h-5 w-5 rounded bg-gradient-to-tr from-[#F472B6] to-[#6366F1] text-[#020617] font-semibold flex items-center justify-center shadow-lg shadow-[#F472B6]/15 hover:scale-105 transition-transform duration-300 shrink-0">
                 <Languages className="w-3.5 h-3.5 stroke-[2.5]" />
               </div>
               <span className="text-xl font-bold tracking-tight text-[#F1F5F9] font-sans">
-                Sub.<span className="font-bold bg-gradient-to-r from-[#F472B6] to-[#6366F1] bg-clip-text text-transparent">Stich</span>
+                Sub.<span className="font-bold bg-gradient-to-r from-[#F472B6] to-[#6366F1] bg-clip-text text-transparent">Stitch</span>
               </span>
             </a>
 
             {/* Center: Desktop links */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center justify-center gap-8 justify-self-center">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
@@ -75,16 +75,15 @@ export default function Navbar() {
             </div>
 
             {/* Right: Language Selector & Open App Button */}
-            <div className="hidden md:flex items-center gap-4">
+            <div className="hidden md:flex items-center justify-end gap-3 justify-self-end">
               {/* Language Dropdown Selector */}
               <div className="relative">
                 <button
                   id="lang-selector-btn-desktop"
                   onClick={() => setIsDesktopDropdownOpen(!isDesktopDropdownOpen)}
-                  className="flex items-center gap-1.5 px-3 h-7 rounded-lg bg-[#1E293B]/60 hover:bg-[#1E293B] border border-[#334155]/60 hover:border-[#F472B6]/40 text-xs font-semibold text-[#E2E8F0] transition-all duration-200 outline-none"
+                  className="box-border h-7 min-w-[124px] inline-flex items-center justify-center gap-1.5 px-2.5 rounded-md bg-[#1E293B]/60 hover:bg-[#1E293B] border border-[#334155]/60 hover:border-[#F472B6]/40 text-[11px] font-semibold leading-none text-[#E2E8F0] transition-all duration-200 outline-none"
                 >
-                  <span className="text-sm leading-none">{activeLanguage.flag}</span>
-                  <span className="font-sans text-xs tracking-wide">{activeLanguage.nativeName}</span>
+                  <span className="font-sans text-[11px] tracking-wide">{activeLanguage.nativeName}</span>
                   <ChevronDown className={`w-3 h-3 text-[#94A3B8] transition-transform duration-250 ${isDesktopDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence>
@@ -111,8 +110,7 @@ export default function Navbar() {
                                  : "text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-[#1E293B]/40"
                              }`}
                            >
-                             <div className="flex items-center gap-2">
-                               <span className="text-base">{lang.flag}</span>
+                             <div className="flex items-center">
                                <span className="font-sans">{lang.nativeName}</span>
                              </div>
                              {currentLanguage === lang.code && (
@@ -134,7 +132,7 @@ export default function Navbar() {
                 target="_blank"
                 referrerPolicy="no-referrer"
                 rel="noopener noreferrer"
-                className="relative inline-flex items-center gap-1.5 px-4 h-7 text-xs font-semibold rounded-lg text-slate-900 overflow-hidden bg-gradient-to-r from-[#F472B6] to-[#6366F1] shadow-[0_0_20px_rgba(244,114,182,0.3)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] group"
+                className="box-border h-7 min-w-[124px] relative inline-flex items-center justify-center gap-1.5 px-3 text-[11px] font-semibold leading-none rounded-md border border-transparent text-slate-900 overflow-hidden bg-gradient-to-r from-[#F472B6] to-[#6366F1] bg-clip-padding shadow-[0_0_18px_rgba(244,114,182,0.24)] transition-all duration-300 hover:shadow-[0_0_22px_rgba(244,114,182,0.38)] group"
               >
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span>{t("openApp")}</span>
@@ -143,7 +141,7 @@ export default function Navbar() {
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex md:hidden items-center gap-2">
+            <div className="flex md:hidden items-center gap-2 justify-self-end col-start-3">
               <button
                 id="nav-menu-toggle"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -193,8 +191,7 @@ export default function Navbar() {
                     onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}
                     className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl bg-[#1E293B]/40 hover:bg-[#1E293B]/60 border border-[#334155]/60 text-sm font-medium text-[#E2E8F0] transition-all duration-200"
                   >
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg">{activeLanguage.flag}</span>
+                    <div className="flex items-center">
                       <span>{activeLanguage.nativeName}</span>
                     </div>
                     <ChevronDown className={`w-4 h-4 text-[#94A3B8] transition-transform duration-200 ${isMobileDropdownOpen ? "rotate-180" : ""}`} />
@@ -221,8 +218,7 @@ export default function Navbar() {
                                 : "text-[#94A3B8] hover:text-[#E2E8F0]"
                             }`}
                           >
-                            <div className="flex items-center gap-2">
-                              <span>{lang.flag}</span>
+                            <div className="flex items-center">
                               <span>{lang.nativeName}</span>
                             </div>
                           </button>

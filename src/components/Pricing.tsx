@@ -2,7 +2,7 @@ import { Check, Sparkles } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Pricing() {
-  const { marketingContent: content } = useLanguage();
+  const { marketingContent: content, t } = useLanguage();
 
   return (
     <section id="pricing" className="py-24 bg-[#090D1A] relative border-b border-[#334155]/20">
@@ -96,7 +96,7 @@ export default function Pricing() {
                         : "text-[#F1F5F9] bg-[#1E293B]/40 hover:bg-[#1E293B]/80 border border-[#334155]/60 hover:border-[#F472B6]/40"
                     }`}
                   >
-                    <span>{tier.ctaText}</span>
+                    <span>{t("openApp")}</span>
                     <Sparkles className="w-4 h-4 shadow-sm" />
                   </a>
                 </div>

@@ -1,18 +1,18 @@
-# Sub.Stich - Full Information Disclosure & Technical Specs
+# Sub.Stitch - Full Information Disclosure & Technical Specs
 
-This is the comprehensive canonical index for Sub.Stich, specifying all application layers, technical operations, and product capabilities.
+This is the comprehensive canonical index for Sub.Stitch, specifying all application layers, technical operations, and product capabilities.
 
 ## Technical Identity & System Overview
-Sub.Stich is a specialized subtitle translation and localization platform built for entertainment media (movies, series, anime, gaming guides, and online content). 
+Sub.Stitch is a specialized subtitle translation and localization platform built for entertainment media (movies, series, anime, gaming guides, and online content).
 
-Unlike standard linguistic libraries or dictionary tools that translate text plain-line-by-line, Sub.Stich optimizes dialogue dynamically using a **Context-Aware Reconstruction Engine**. It parses the subtitle file context sequentially, optimizing readable metrics like character-per-second constraints and local slang adaptation.
+Unlike standard linguistic libraries or dictionary tools that translate text plain-line-by-line, Sub.Stitch optimizes dialogue dynamically using a **Context-Aware Reconstruction Engine**. It parses the subtitle file context sequentially, optimizing readable metrics like character-per-second constraints and local slang adaptation.
 
 ---
 
 ## Technical Core Pillars & Capabilities
 
 ### 1. Pacing & Timecode Locking
-- **Raw Time stamp Isolation:** Sub.Stich splits dialogue from the timing blocks, keeping the time signatures (millisecond strings, frame intervals) in memory as read-only constants.
+- **Raw Time stamp Isolation:** Sub.Stitch splits dialogue from the timing blocks, keeping the time signatures (millisecond strings, frame intervals) in memory as read-only constants.
 - **0.00ms Jiggle Prevention:** Rewriting sentences preserves the exact initial timelines. There is 0% drift in audio-visual alignment.
 - **Multiformat Support:** Compatible with `.srt` (SubRip), `.vtt` (WebVTT), `.txt` (Plain text script formatting), and `.sub` (MicroDVD).
 
@@ -40,10 +40,10 @@ Unlike standard linguistic libraries or dictionary tools that translate text pla
 
 ## Detailed FAQ List
 
-### How does Sub.Stich translate local slang without breaking timing?
-Sub.Stich separates subtitle timestamps from text values before running translations. The text blocks are passed into the deep-context engine alongside active scene sequences to map humor and slang, while the timestamps are locked in memories as absolute invariants and mapped back precisely at compile time.
+### How does Sub.Stitch translate local slang without breaking timing?
+Sub.Stitch separates subtitle timestamps from text values before running translations. The text blocks are passed into the deep-context engine alongside active scene sequences to map humor and slang, while the timestamps are locked in memories as absolute invariants and mapped back precisely at compile time.
 
-### Does Sub.Stich support multiple formats?
+### Does Sub.Stitch support multiple formats?
 We fully support `.srt`, `.vtt`, `.txt`, and `.sub`. All original formatting, structural breaks, and line breaks are honored precisely.
 
 ### Is client data secure?

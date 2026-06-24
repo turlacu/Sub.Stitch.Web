@@ -59,7 +59,7 @@ export default function ProblemSection() {
             </div>
           </div>
 
-          {/* Card 2: Sub.Stich Translator */}
+          {/* Card 2: Sub.Stitch Translator */}
           <div className="bg-[#1E293B]/20 rounded-2xl border border-[#334155] p-6 sm:p-8 flex flex-col justify-between hover:border-[#F472B6]/60 transition-all duration-300 relative group overflow-hidden shadow-xl shadow-pink-950/5">
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr from-[#F472B6]/10 to-[#6366F1]/10 rounded-full blur-2xl group-hover:from-[#F472B6]/20 transition-all" />
             <div className="space-y-6">

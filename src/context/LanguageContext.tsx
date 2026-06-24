@@ -1,9 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { TRANSLATIONS, LANGUAGES, TranslationKeys, LanguageDef } from "../data/translations";
 import { MarketingContent } from "../types";
-import { ENGLISH } from "../data/marketing/en";
-import { MARKETING_TRANSLATIONS } from "../data/marketingTranslations";
-import { translateMarketingContent } from "../data/dynamicTranslator";
+import { getMarketingTranslation, loadMarketingTranslation } from "../data/marketingTranslations";
 
 interface LanguageContextType {
   currentLanguage: string;
@@ -11,7 +9,6 @@ interface LanguageContextType {
   languages: LanguageDef[];
   t: (key: keyof TranslationKeys) => string;
   marketingContent: MarketingContent;
-  isTranslating: boolean;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -33,52 +30,6 @@ const safeSetItem = (key: string, value: string): void => {
   }
 };
 
-// Deeply merges a partially translated/cached translation object with a fully populated source template
-// to ensure no missing/undefined sections can trigger a runtime component tree crash.
-function deepMergeWithTemplate(template: any, incoming: any): any {
-  if (typeof template !== typeof incoming || incoming === null || incoming === undefined) {
-    return template;
-  }
-  if (typeof template === 'string') {
-    return typeof incoming === 'string' && incoming.trim() !== "" ? incoming : template;
-  }
-  if (Array.isArray(template)) {
-    if (!Array.isArray(incoming)) return template;
-    return template.map((item, idx) => {
-      return deepMergeWithTemplate(item, incoming[idx]);
-    });
-  }
-  if (typeof template === 'object') {
-    const merged: any = {};
-    Object.keys(template).forEach(key => {
-      merged[key] = deepMergeWithTemplate(template[key], incoming[key]);
-    });
-    return merged;
-  }
-  return incoming;
-}
-
-const getInitialMarketingContent = (lang: string): MarketingContent => {
-  const normalized = lang.toLowerCase();
-  const basePrefix = normalized.substring(0, 2);
-  
-  if (MARKETING_TRANSLATIONS[normalized]) {
-    return MARKETING_TRANSLATIONS[normalized];
-  }
-  if (MARKETING_TRANSLATIONS[basePrefix]) {
-    return MARKETING_TRANSLATIONS[basePrefix];
-  }
-
-  try {
-    const cached = safeGetItem(`subai-marketing-cache-${normalized}`);
-    if (cached) {
-      return deepMergeWithTemplate(ENGLISH, JSON.parse(cached));
-    }
-  } catch (e) {}
-
-  return ENGLISH;
-};
-
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentLanguage, setCurrentLanguageState] = useState<string>(() => {
     const saved = safeGetItem("subai-site-lang");
@@ -86,55 +37,26 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   });
 
   const [marketingContent, setMarketingContent] = useState<MarketingContent>(() => 
-    getInitialMarketingContent(currentLanguage)
+    getMarketingTranslation(currentLanguage)
   );
-  const [isTranslating, setIsTranslating] = useState<boolean>(false);
 
   useEffect(() => {
-    let isMounted = true;
-    
-    const loadContent = async () => {
-      try {
-        const normalized = currentLanguage.toLowerCase();
-        const basePrefix = normalized.substring(0, 2);
-        
-        // If it's a known offline files-based language, load immediately
-        if (MARKETING_TRANSLATIONS[normalized] || MARKETING_TRANSLATIONS[basePrefix]) {
-          setMarketingContent(getInitialMarketingContent(currentLanguage));
-          setIsTranslating(false);
-          return;
-        }
+    let isCurrentLoad = true;
 
-        // Check if we already have it cached
-        try {
-          const cached = safeGetItem(`subai-marketing-cache-${normalized}`);
-          if (cached) {
-            setMarketingContent(deepMergeWithTemplate(ENGLISH, JSON.parse(cached)));
-            setIsTranslating(false);
-            return;
-          }
-        } catch (e) {}
+    setMarketingContent(getMarketingTranslation(currentLanguage));
 
-        // Otherwise translate dynamically in background
-        setIsTranslating(true);
-        const translated = await translateMarketingContent(currentLanguage);
-        if (isMounted) {
-          setMarketingContent(deepMergeWithTemplate(ENGLISH, translated));
-          setIsTranslating(false);
+    loadMarketingTranslation(currentLanguage)
+      .then((content) => {
+        if (isCurrentLoad) {
+          setMarketingContent(content);
         }
-      } catch (err) {
-        console.error("Failed to load or translate content dynamic routing:", err);
-        if (isMounted) {
-          setMarketingContent(ENGLISH);
-          setIsTranslating(false);
-        }
-      }
-    };
-
-    loadContent();
+      })
+      .catch((error) => {
+        console.error("Failed to load local marketing translation", { language: currentLanguage, error });
+      });
 
     return () => {
-      isMounted = false;
+      isCurrentLoad = false;
     };
   }, [currentLanguage]);
 
@@ -154,8 +76,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   // Localize page metadata based on chosen locale
   useEffect(() => {
     const headTitle = t("heroTitle1") && t("heroTitle2") && t("heroTitle3")
-      ? `Sub.Stich Translator | ${t("heroTitle1")} ${t("heroTitle2")} ${t("heroTitle3")}`
-      : "Sub.Stich Translator | Premium AI Subtitle Translation & Sync";
+      ? `Sub.Stitch Translator | ${t("heroTitle1")} ${t("heroTitle2")} ${t("heroTitle3")}`
+      : "Sub.Stitch Translator | Premium AI Subtitle Translation & Sync";
     document.title = headTitle;
 
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -165,7 +87,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [currentLanguage, marketingContent]);
 
   return (
-    <LanguageContext.Provider value={{ currentLanguage, setLanguage, languages: LANGUAGES, t, marketingContent, isTranslating }}>
+    <LanguageContext.Provider value={{ currentLanguage, setLanguage, languages: LANGUAGES, t, marketingContent }}>
       {children}
     </LanguageContext.Provider>
   );

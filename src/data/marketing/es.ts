@@ -14,7 +14,7 @@ export const SPANISH: MarketingContent = {
   problem: {
     badge: "El Vacío de Traducción",
     title: "Deja de corregir subtítulos rotos de forma manual.",
-    subtitle: "La mayoría de traductores automáticos traducen línea por línea a ciegas, arruinando los diálogos. Sub.Stich comprende la escena, preservando el significado, la emoción y la fluidez.",
+    subtitle: "La mayoría de traductores automáticos traducen línea por línea a ciegas, arruinando los diálogos. Sub.Stitch comprende la escena, preservando el significado, la emoción y la fluidez.",
     basicCard: {
       title: "Software de Traducción Básico",
       desc: "Traductor de diccionario línea a línea",
@@ -31,11 +31,11 @@ export const SPANISH: MarketingContent = {
       footer: "Requiere horas de revisión manual de tiempos y expresiones."
     },
     subaiCard: {
-      title: "Traductor Sub.Stich",
+      title: "Traductor Sub.Stitch",
       desc: "Lector de diálogo sensible al contexto",
       recBadge: "RECOMENDADO",
       successLabel: "✓ Contexto conservado",
-      successEx: "*Significado correcto: Sub.Stich comprende la jerga de la escena y genera la equivalencia natural en español.",
+      successEx: "*Significado correcto: Sub.Stitch comprende la jerga de la escena y genera la equivalencia natural en español.",
       traits: [
         "Reconstruye la escena para mapear correctamente pronombres y géneros",
         "Traduce de forma orgánica frases naturales, humor local y modismos",
@@ -47,7 +47,7 @@ export const SPANISH: MarketingContent = {
   },
   howItWorks: {
     badge: "Flujo de Trabajo",
-    title: "Cómo funciona Sub.Stich",
+    title: "Cómo funciona Sub.Stitch",
     subtitle: "Traduzca subtítulos sin problemas en cuatro sencillos y rápidos pasos. Procese capítulos enteros en menos de un minuto.",
     steps: [
       { step: "PASO 01", title: "Subir", desc: "Arrastre archivos de subtítulos .SRT, .VTT, .TXT o .SUB a nuestro portal seguro." },
@@ -60,7 +60,7 @@ export const SPANISH: MarketingContent = {
   features: {
     badge: "Funciones Inteligentes",
     title: "Diseñado para localización premium",
-    subtitle: "Los traductores estándar tratan el texto como aburridos folios de documentos. Sub.Stich trata tus subtítulos como un ecosistema vivo de cine.",
+    subtitle: "Los traductores estándar tratan el texto como aburridos folios de documentos. Sub.Stitch trata tus subtítulos como un ecosistema vivo de cine.",
     items: [
       { id: "context", title: "Motor de Contexto IA", description: "Lee las líneas anteriores para capturar el humor, las relaciones y la fluidez.", badge: "Único" },
       { id: "batch", title: "Libertad de Formatos", description: "Soporta subtítulos en todos los formatos del sector: .SRT, .VTT, .TXT o .SUB.", badge: "Universal" },
@@ -77,13 +77,14 @@ export const SPANISH: MarketingContent = {
     drift: "± 0.00ms de desvío de seguridad",
     stdDraft: "Borrador de Traducción Estándar:",
     stdWarning: "52 caracteres (Fatiga visual)",
-    subaiComp: "Compresión de Longitud Sub.Stich:",
+    subaiComp: "Compresión de Longitud Sub.Stitch:",
     subaiScore: "31 caracteres (Lectura Confortable)"
   },
   pricing: {
     badge: "Paquete Gratuito de Start Incluido",
     title: "Adquiere Créditos. Empuja Tu Rendimiento.",
     subtitle: "Registra una cuenta para empezar a traducir con 100 créditos gratis. Cada crédito procesa un promedio de 10 líneas.",
+    creditNote: "Registra una cuenta para empezar a traducir con 100 créditos gratis.",
     tiers: [
       {
         id: "starter",
@@ -120,11 +121,11 @@ export const SPANISH: MarketingContent = {
     title: "Preguntas Frecuentes",
     subtitle: "Todo lo que necesitas saber sobre nuestro traductor de subtítulos SRT sensible al contexto.",
     items: [
-      { question: "¿Modifica Sub.Stich los tiempos de mis subtítulos?", answer: "En absoluto. Sub.Stich trata los códigos de tiempo como constantes de solo lectura. Extraemos el bloque de texto puro, lo traducimos aplicando algoritmos de IA y lo insertamos de nuevo en los mismos milisegundos originales." },
-      { question: "¿Es parecido a Google Translate o DeepL?", answer: "No. Los traductores online tradicionales van línea por línea, rompiendo los diálogos. Sub.Stich une los bloques adyacentes para que el modelo entienda quién está hablando, el sarcasmo, el género y la continuación narrativa de la escena." },
-      { question: "¿Necesito una cuenta para usar Sub.Stich?", answer: "Sí, es obligatorio crear una cuenta. Al registrarte te regalamos 100 créditos de bienvenida para que experimentes la traducción inteligente sin ningún costo." },
-      { question: "¿Qué formatos de archivo se admiten?", answer: "Sub.Stich soporta perfectamente los formatos SubRip (.srt), WebVTT (.vtt), Texto Plano (.txt) y MicroDVD (.sub), cuidando los metadatos." },
-      { question: "¿Están seguros mis archivos en Sub.Stich?", answer: "Sí, la seguridad es un pilar fundamental. Utilizamos cifrado SSL para las transferencias de archivos. Los datos se procesan de forma temporal en RAM y se eliminan del servidor en 1 hora tras tu descarga." }
+      { question: "¿Modifica Sub.Stitch los tiempos de mis subtítulos?", answer: "En absoluto. Sub.Stitch trata los códigos de tiempo como constantes de solo lectura. Extraemos el bloque de texto puro, lo traducimos aplicando algoritmos de IA y lo insertamos de nuevo en los mismos milisegundos originales." },
+      { question: "¿Es parecido a Google Translate o DeepL?", answer: "No. Los traductores online tradicionales van línea por línea, rompiendo los diálogos. Sub.Stitch une los bloques adyacentes para que el modelo entienda quién está hablando, el sarcasmo, el género y la continuación narrativa de la escena." },
+      { question: "¿Necesito una cuenta para usar Sub.Stitch?", answer: "Sí, es obligatorio crear una cuenta. Al registrarte te regalamos 100 créditos de bienvenida para que experimentes la traducción inteligente sin ningún costo." },
+      { question: "¿Qué formatos de archivo se admiten?", answer: "Sub.Stitch soporta perfectamente los formatos SubRip (.srt), WebVTT (.vtt), Texto Plano (.txt) y MicroDVD (.sub), cuidando los metadatos." },
+      { question: "¿Están seguros mis archivos en Sub.Stitch?", answer: "Sí, la seguridad es un pilar fundamental. Utilizamos cifrado SSL para las transferencias de archivos. Los datos se procesan de forma temporal en RAM y se eliminan del servidor en 1 hora tras tu descarga." }
     ],
     footerPrefix: "¿Tienes otra consulta técnica? Echa un vistazo a la ",
     directApp: "Aplicación Directa",
@@ -136,11 +137,16 @@ export const SPANISH: MarketingContent = {
     subtitle: "¿Preguntas? ¿Sugerencias? ¿Necesitas volumen de subtitulado empresarial? Escríbenos.",
     inquiries: "Soporte y Consultas",
     replyTime: "El tiempo medio de respuesta es inferior a 12 horas.",
-    feedbackTitle: "Sugerencias Sub.Stich",
+    feedbackTitle: "Sugerencias Sub.Stitch",
     feedbackDesc: "Cuéntanos sobre funciones que te faltan, API o mejoras en el portal.",
     enterpriseTitle: "Servicio Enterprise",
     enterpriseDesc: "Solicita rendimiento y servidores dedicados de alto uso para plataformas de vídeo.",
     emailSign: "Contacto: turlacu@live.com",
+    emailBlockLabel: "Correo directo",
+    emailBlockTitle: "Envíanos los detalles desde tu bandeja de entrada.",
+    emailBlockDesc: "Incluye el tipo de archivo, volumen aproximado de subtítulos, idiomas objetivo y cualquier requisito del flujo de trabajo.",
+    emailBlockAddressLabel: "Dirección de contacto",
+    emailBlockCta: "Enviar correo a Sub.Stitch",
     successTitle: "¡Mensaje Enviado con Éxito!",
     successDesc: "Muchas gracias. Tu correo ha sido entregado a nuestra mesa de operaciones. ¡Te responderemos muy pronto!",
     successBtn: "Enviar otro mensaje",

@@ -8,6 +8,7 @@ import Pricing from "./components/Pricing";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import { LanguageProvider } from "./context/LanguageContext";
 
 export default function App() {
@@ -45,8 +46,9 @@ export default function App() {
 
         {/* Global layout boundary footer */}
         <Footer />
+
+        <ScrollToTopButton />
       </div>
     </LanguageProvider>
   );
 }
-

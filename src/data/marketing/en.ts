@@ -14,7 +14,7 @@ export const ENGLISH: MarketingContent = {
   problem: {
     badge: "The Translation Gap",
     title: "Stop fixing broken subtitles manually.",
-    subtitle: "Most automatic translators convert line-by-line blindly, ruining the dialog. Sub.Stich understands the scene, keeping meaning, emotion, and flow.",
+    subtitle: "Most automatic translators convert line-by-line blindly, ruining the dialog. Sub.Stitch understands the scene, keeping meaning, emotion, and flow.",
     basicCard: {
       title: "Basic Translation Software",
       desc: "Line-by-line machine dictionary",
@@ -31,11 +31,11 @@ export const ENGLISH: MarketingContent = {
       footer: "Requires hours of manual timing & wording revision."
     },
     subaiCard: {
-      title: "Sub.Stich Translator",
+      title: "Sub.Stitch Translator",
       desc: "Context-aware dialogue parser",
       recBadge: "RECOMMENDED",
       successLabel: "✓ Context preserved",
-      successEx: "*Correct meaning: Sub.Stich understands the contextual slang and outputs a perfect natural equivalent.",
+      successEx: "*Correct meaning: Sub.Stitch understands the contextual slang and outputs a perfect natural equivalent.",
       traits: [
         "Reconstructs scene continuity so pronouns/genders map correctly",
         "Translates natural phrases, local humor and idioms organically",
@@ -47,7 +47,7 @@ export const ENGLISH: MarketingContent = {
   },
   howItWorks: {
     badge: "Pipeline Workflow",
-    title: "How Sub.Stich works",
+    title: "How Sub.Stitch works",
     subtitle: "Translate subtitles smoothly in four simple, highly optimized steps. Process complete season files in under a minute.",
     steps: [
       { step: "STEP 01", title: "Upload", desc: "Drag & drop .SRT, .VTT, .TXT or .SUB subtitle files securely into our portal." },
@@ -60,7 +60,7 @@ export const ENGLISH: MarketingContent = {
   features: {
     badge: "Intelligent Features",
     title: "Engineered for premium localization",
-    subtitle: "Standard translators treat text like plain sheets of documents. Sub.Stich treats your subtitle like a living cinematic ecosystem.",
+    subtitle: "Standard translators treat text like plain sheets of documents. Sub.Stitch treats your subtitle like a living cinematic ecosystem.",
     items: [
       { id: "context", title: "AI Context Engine", description: "Reads preceding lines to grasp humor, relationships, and continuity.", badge: "Unique" },
       { id: "batch", title: "Format Freedom", description: "Supports subtitle files across all formats: .SRT, .VTT, .TXT or .SUB.", badge: "Universal" },
@@ -77,13 +77,14 @@ export const ENGLISH: MarketingContent = {
     drift: "± 0.00ms Drift safety",
     stdDraft: "Standard Translation Draft:",
     stdWarning: "52 Chars (Eye Strain)",
-    subaiComp: "Sub.Stich Length Compression:",
+    subaiComp: "Sub.Stitch Length Compression:",
     subaiScore: "31 Chars (Comfortable Read)"
   },
   pricing: {
     badge: "Account Starter Package Included",
     title: "Purchase Credits. Boost Your Output.",
     subtitle: "Create an account to start translating with 100 free automatic credits. Each credit translates approximately 10 subtitle lines.",
+    creditNote: "Create an account to start translating with 100 free automatic credits.",
     tiers: [
       {
         id: "starter",
@@ -120,11 +121,11 @@ export const ENGLISH: MarketingContent = {
     title: "Frequently Asked Questions",
     subtitle: "Everything you need to understand about our custom context-aware SRT translator.",
     items: [
-      { question: "Does Sub.Stich change my subtitle timing?", answer: "Absolutely not. Sub.Stich treats subtitle timecodes as read-only constants. Whether you upload .SRT, .VTT, .TXT or .SUB, our core parser strictly extracts text blocks, translates them using context-aware algorithms, and then maps them back to their exact original timestamps." },
-      { question: "Is this the same as Google Translate or DeepL?", answer: "No. Standard online translators process text line-by-line, which breaks down because subtitles are fragmented dialogue spread across cut-off points. Sub.Stich parses your entire file using our custom 'Context-Aware Reconstruction Engine'. This feeds adjacent blocks to the model together, helping it understand who is speaking, sarcasm, gender context, and sentence continuation." },
-      { question: "Do I need an account to use Sub.Stich?", answer: "Yes, you need to create an account to use the application. The great news is that every new user receives 100 free credits upon sign up to let you fully experience context-aware subtitle translation—free starter package included on sign up!" },
-      { question: "Which subtitle file types are supported?", answer: "Sub.Stich fully supports SubRip (.srt), WebVTT (.vtt), Plain Text (.txt), and MicroDVD (.sub) formats, keeping dialogue aligned and metadata clean for downstream renderers." },
-      { question: "Are my subtitle files kept private?", answer: "Yes, security is a key pillar of our service. Sub.Stich uses secure SSL encryption for all file transfers. Direct uploads are securely processed in RAM, of which transient cached outputs are automatically deleted from our servers within 1 hour after download." }
+      { question: "Does Sub.Stitch change my subtitle timing?", answer: "Absolutely not. Sub.Stitch treats subtitle timecodes as read-only constants. Whether you upload .SRT, .VTT, .TXT or .SUB, our core parser strictly extracts text blocks, translates them using context-aware algorithms, and then maps them back to their exact original timestamps." },
+      { question: "Is this the same as Google Translate or DeepL?", answer: "No. Standard online translators process text line-by-line, which breaks down because subtitles are fragmented dialogue spread across cut-off points. Sub.Stitch parses your entire file using our custom 'Context-Aware Reconstruction Engine'. This feeds adjacent blocks to the model together, helping it understand who is speaking, sarcasm, gender context, and sentence continuation." },
+      { question: "Do I need an account to use Sub.Stitch?", answer: "Yes, you need to create an account to use the application. The great news is that every new user receives 100 free credits upon sign up to let you fully experience context-aware subtitle translation—free starter package included on sign up!" },
+      { question: "Which subtitle file types are supported?", answer: "Sub.Stitch fully supports SubRip (.srt), WebVTT (.vtt), Plain Text (.txt), and MicroDVD (.sub) formats, keeping dialogue aligned and metadata clean for downstream renderers." },
+      { question: "Are my subtitle files kept private?", answer: "Yes, security is a key pillar of our service. Sub.Stitch uses secure SSL encryption for all file transfers. Direct uploads are securely processed in RAM, of which transient cached outputs are automatically deleted from our servers within 1 hour after download." }
     ],
     footerPrefix: "Have a different technical question? Check out our ",
     directApp: "Direct App",
@@ -136,11 +137,16 @@ export const ENGLISH: MarketingContent = {
     subtitle: "Questions? Feedback? Need premium bulk subtitle translation volume? Let us know.",
     inquiries: "Inquiries",
     replyTime: "Average reply time is under 12 hours.",
-    feedbackTitle: "Sub.Stich Feedback",
+    feedbackTitle: "Sub.Stitch Feedback",
     feedbackDesc: "Tell us about missing features, API ideas, or file improvements.",
     enterpriseTitle: "Enterprise Plans",
     enterpriseDesc: "Request high-performing dedicated slots for video platforms.",
     emailSign: "Contact: turlacu@live.com",
+    emailBlockLabel: "Direct Email",
+    emailBlockTitle: "Send the details from your inbox.",
+    emailBlockDesc: "Include the file type, approximate subtitle volume, target languages, and any workflow constraints.",
+    emailBlockAddressLabel: "Contact address",
+    emailBlockCta: "Email Sub.Stitch",
     successTitle: "Message Dispatch Sent!",
     successDesc: "Thank you. Your inquiry has been forwarded directly to our support desk. We will reach back shortly!",
     successBtn: "Submit Another Note",

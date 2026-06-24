@@ -1,45 +1,10 @@
-import { useState, FormEvent } from "react";
-import { Mail, MessageSquare, Send, CheckCircle, HelpCircle } from "lucide-react";
+import { Mail, MessageSquare, HelpCircle, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("question");
-  const [message, setMessage] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const { marketingContent: content } = useLanguage();
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setError("");
-
-    if (!name.trim()) {
-      setError(content.contact.errName);
-      return;
-    }
-    if (!email.trim() || !email.includes("@")) {
-      setError(content.contact.errEmail);
-      return;
-    }
-    if (!message.trim()) {
-      setError(content.contact.errMessage);
-      return;
-    }
-
-    setIsSubmitting(true);
-    // Simulate API request to developer inbox
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setName("");
-      setEmail("");
-      setMessage("");
-    }, 850);
-  };
+  const contactEmail = "turlacu@live.com";
+  const mailtoHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Sub.Stitch website inquiry")}`;
 
   return (
     <section id="contact" className="py-24 bg-[#090D1A] relative border-b border-[#334155]/20">
@@ -103,105 +68,43 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Card Right: Contact Form */}
-          <div className="md:col-span-7 p-8 bg-[#040815]/40">
-            {isSubmitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-8 animate-float">
-                <div className="p-4 rounded-full bg-[#10B981]/10 text-[#10B981] border border-[#10B981]/30">
-                  <CheckCircle className="w-10 h-10" />
-                </div>
-                <div className="space-y-1.5">
-                  <h3 className="text-lg font-bold text-[#F1F5F9]">{content.contact.successTitle}</h3>
-                  <p className="text-xs text-[#94A3B8] max-w-[280px] leading-relaxed mx-auto">
-                    {content.contact.successDesc}
-                  </p>
-                </div>
-                <button
-                  onClick={() => setIsSubmitted(false)}
-                  className="px-4 py-2 rounded-xl text-xs font-semibold bg-[#1E293B] hover:bg-[#334155] border border-[#334155]/60 text-white transition-colors"
-                >
-                  {content.contact.successBtn}
-                </button>
+          {/* Card Right: Direct email contact */}
+          <div className="md:col-span-7 p-8 bg-[#040815]/40 flex flex-col justify-center">
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <span className="inline-flex items-center gap-2 text-[10px] font-mono font-bold tracking-widest uppercase text-[#F472B6]">
+                  <Mail className="w-3.5 h-3.5" />
+                  {content.contact.emailBlockLabel}
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                  {content.contact.emailBlockTitle}
+                </h3>
+                <p className="text-sm text-[#94A3B8] leading-relaxed font-light">
+                  {content.contact.emailBlockDesc}
+                </p>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                
-                {error && (
-                  <div className="p-3 bg-[#EF4444]/10 border border-[#EF4444]/30 rounded-xl text-xs text-[#EF4444] font-semibold">
-                    {error}
-                  </div>
-                )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Name field */}
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-[#94A3B8] uppercase">{content.contact.lblName}</label>
-                    <input
-                      id="contact-name-input"
-                      type="text"
-                      className="w-full bg-[#020617] border border-[#334155] rounded-xl px-3 py-2.5 text-xs text-[#F1F5F9] focus:outline-none focus:border-[#F472B6] transition-colors"
-                      placeholder="Adrian"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </div>
-
-                  {/* Email field */}
-                  <div className="space-y-1.5">
-                    <label className="text-[11px] font-mono text-[#94A3B8] uppercase">{content.contact.lblEmail}</label>
-                    <input
-                      id="contact-email-input"
-                      type="email"
-                      className="w-full bg-[#020617] border border-[#334155] rounded-xl px-3 py-2.5 text-xs text-[#F1F5F9] focus:outline-none focus:border-[#F472B6] transition-colors"
-                      placeholder="adrian@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                </div>
-
-                {/* Subject selector drop */}
-                <div className="space-y-1.5">
-                  <label className="text-[11px] font-mono text-[#94A3B8] uppercase">{content.contact.lblSubject}</label>
-                  <select
-                    id="contact-subject-select"
-                    className="w-full bg-[#020617] border border-[#334155] rounded-xl px-3 py-2.5 text-xs text-[#F1F5F9] focus:outline-none focus:border-[#F472B6] transition-colors appearance-none cursor-pointer"
-                    value={subject}
-                    onChange={(e) => setSubject(e.target.value)}
-                  >
-                    <option value="question">{content.contact.optQuestion}</option>
-                    <option value="feedback">{content.contact.optFeedback}</option>
-                    <option value="volume">{content.contact.optVolume}</option>
-                    <option value="other">{content.contact.optOther}</option>
-                  </select>
-                </div>
-
-                {/* Message text container */}
-                <div className="space-y-1.5">
-                  <label className="text-[11px] font-mono text-[#94A3B8] uppercase">{content.contact.lblMessage}</label>
-                  <textarea
-                    id="contact-message-input"
-                    rows={4}
-                    className="w-full bg-[#020617] border border-[#334155] rounded-xl p-3 text-xs text-[#F1F5F9] focus:outline-none focus:border-[#F472B6] transition-colors resize-none"
-                    placeholder={content.contact.placeholderMessage}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                  />
-                </div>
-
-                {/* Submit button */}
-                <button
-                  id="contact-submit-btn"
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-bold rounded-xl text-slate-900 bg-gradient-to-r from-[#F472B6] to-[#6366F1] shadow-[0_0_15px_rgba(244,114,182,0.25)] hover:shadow-[0_0_20px_rgba(244,114,182,0.45)] hover:scale-[1.01] transition-all duration-300 group disabled:opacity-75 disabled:hover:scale-100"
+              <div className="rounded-2xl border border-[#334155]/70 bg-[#020617]/65 p-5">
+                <p className="text-[11px] uppercase tracking-widest font-mono text-[#64748B] mb-2">
+                  {content.contact.emailBlockAddressLabel}
+                </p>
+                <a
+                  href={mailtoHref}
+                  className="text-lg sm:text-xl font-bold text-[#F1F5F9] hover:text-[#F472B6] transition-colors break-all"
                 >
-                  <span>{isSubmitting ? content.contact.btnSending : content.contact.btnSend}</span>
-                  <Send className={`w-3.5 h-3.5 text-slate-900 transition-transform ${isSubmitting ? "" : "group-hover:translate-x-0.5 group-hover:-translate-y-0.5"}`} />
-                </button>
+                  {contactEmail}
+                </a>
+              </div>
 
-              </form>
-            )}
+              <a
+                id="contact-email-link"
+                href={mailtoHref}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold rounded-xl text-slate-950 bg-gradient-to-r from-[#F472B6] to-[#6366F1] shadow-[0_0_15px_rgba(244,114,182,0.25)] hover:shadow-[0_0_20px_rgba(244,114,182,0.45)] hover:scale-[1.01] transition-all duration-300"
+              >
+                <span>{content.contact.emailBlockCta}</span>
+                <ArrowUpRight className="w-4 h-4 text-slate-950" />
+              </a>
+            </div>
           </div>
 
         </div>

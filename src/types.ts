@@ -91,6 +91,7 @@ export interface MarketingContent {
     badge: string;
     title: string;
     subtitle: string;
+    creditNote: string;
     whiteboardLabel?: string;
     tiers: Array<{
       id: string;
@@ -125,6 +126,11 @@ export interface MarketingContent {
     enterpriseTitle: string;
     enterpriseDesc: string;
     emailSign: string;
+    emailBlockLabel: string;
+    emailBlockTitle: string;
+    emailBlockDesc: string;
+    emailBlockAddressLabel: string;
+    emailBlockCta: string;
     successTitle: string;
     successDesc: string;
     successBtn: string;
@@ -153,4 +159,3 @@ export interface MarketingContent {
     copyright: string;
   };
 }
-

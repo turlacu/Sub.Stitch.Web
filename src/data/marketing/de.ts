@@ -14,7 +14,7 @@ export const GERMAN: MarketingContent = {
   problem: {
     badge: "Die Übersetzungslücke",
     title: "Schluss mit dem manuellen Korrigieren von Untertiteln.",
-    subtitle: "Die meisten Übersetzer arbeiten blind Zeile für Zeile und zerstören den Dialog. Sub.Stich versteht die Szene und bewahrt Sinn, Emotion und Fluss.",
+    subtitle: "Die meisten Übersetzer arbeiten blind Zeile für Zeile und zerstören den Dialog. Sub.Stitch versteht die Szene und bewahrt Sinn, Emotion und Fluss.",
     basicCard: {
       title: "Standard-Übersetzungssoftware",
       desc: "Wort-für-Wort-Übersetzung ohne Zusammenhang",
@@ -31,11 +31,11 @@ export const GERMAN: MarketingContent = {
       footer: "Erfordert stundenlange manuelle Timing- und Textanpassungen."
     },
     subaiCard: {
-      title: "Sub.Stich Übersetzer",
+      title: "Sub.Stitch Übersetzer",
       desc: "Kontextsensitiver Dialog-Parser",
       recBadge: "EMPFOHLEN",
       successLabel: "✓ Kontext bewahrt",
-      successEx: "*Richtige Bedeutung: Sub.Stich versteht den Slang und liefert eine perfekt natürliche Übersetzung.",
+      successEx: "*Richtige Bedeutung: Sub.Stitch versteht den Slang und liefert eine perfekt natürliche Übersetzung.",
       traits: [
         "Rekonstruiert den Szenenzusammenhang für eine korrekte Zuordnung",
         "Übersetzt Redewendungen, lokalen Humor und Umgangssprache organisch",
@@ -47,7 +47,7 @@ export const GERMAN: MarketingContent = {
   },
   howItWorks: {
     badge: "Arbeitsablauf",
-    title: "So funktioniert Sub.Stich",
+    title: "So funktioniert Sub.Stitch",
     subtitle: "Übersetzen Sie Untertitel reibungslos in vier einfachen, hochoptimierten Schritten. Komplette Episoden in unter einer Minute.",
     steps: [
       { step: "SCHRITT 01", title: "Hochladen", desc: "Dateien (.SRT, .VTT, .TXT oder .SUB) in unser sicheres Portal ziehen." },
@@ -60,7 +60,7 @@ export const GERMAN: MarketingContent = {
   features: {
     badge: "Intelligente Funktionen",
     title: "Entwickelt für Premium-Lokalisierung",
-    subtitle: "Standard-Übersetzer behandeln Text wie einfache Dokumentenblätter. Sub.Stich betrachtet Untertitel als lebendiges Kino-Ökosystem.",
+    subtitle: "Standard-Übersetzer behandeln Text wie einfache Dokumentenblätter. Sub.Stitch betrachtet Untertitel als lebendiges Kino-Ökosystem.",
     items: [
       { id: "context", title: "KI-Kontext-Engine", description: "Liest die vorhergehenden Zeilen, um Humor und Beziehungen zu erfassen.", badge: "Einzigartig" },
       { id: "batch", title: "Formatfreiheit", description: "Unterstützt alle branchenüblichen Formate: .SRT, .VTT, .TXT oder .SUB.", badge: "Universell" },
@@ -77,13 +77,14 @@ export const GERMAN: MarketingContent = {
     drift: "± 0.00ms Drift-Schutz garantiert",
     stdDraft: "Standard-Übersetzungsentwurf:",
     stdWarning: "52 Zeichen (Augenbelastung!)",
-    subaiComp: "Sub.Stich Längenkomprimierung:",
+    subaiComp: "Sub.Stitch Längenkomprimierung:",
     subaiScore: "31 Zeichen (Angenehm lesbar)"
   },
   pricing: {
     badge: "Kostenloses Startpaket inklusive",
     title: "Credits erwerben. Übersetzung beschleunigen.",
     subtitle: "Erstellen Sie ein Konto und starten Sie mit 100 kostenlosen Credits. Ein Credit übersetzt ca. 10 Untertitelzeilen.",
+    creditNote: "Erstellen Sie ein Konto und starten Sie mit 100 kostenlosen Credits.",
     tiers: [
       {
         id: "starter",
@@ -120,10 +121,10 @@ export const GERMAN: MarketingContent = {
     title: "Häufig gestellte Fragen",
     subtitle: "Alles, was Sie über unseren präzisen, kontextbewussten SRT-Übersetzer wissen müssen.",
     items: [
-      { question: "Verändert Sub.Stich das Timing meiner Untertitel?", answer: "Nein, absolut nicht. Sub.Stich behandelt Timecodes als schreibgeschützte Konstanten. Unabhängig davon, ob Sie .SRT, .VTT, .TXT oder .SUB hochladen, extrahiert unser System nur den Text, übersetzt ihn kontextsensitiv und fügt ihn wieder exakt in die Original-Timestamps ein." },
-      { question: "Ist das dasselbe wie Google Translate oder DeepL?", answer: "Nein. Standard-Übersetzer arbeiten zeilenweise, was bei abgehackten Untertitel-Sätzen fehlschlägt. Sub.Stich verarbeitet die gesamte Datei zusammen und erfasst so Beziehungen, Humor, Geschlecht und den roten Faden der Szene." },
-      { question: "Benötige ich ein Konto, um Sub.Stich zu nutzen?", answer: "Ja, für die Nutzung ist ein Benutzerkonto erforderlich. Sie erhalten bei der Registrierung direkt 100 kostenlose Willkommens-Credits zum Ausprobieren." },
-      { question: "Welche Dateiformate werden unterstützt?", answer: "Sub.Stich unterstützt SubRip (.srt), WebVTT (.vtt), Reintext (.txt) und MicroDVD (.sub) unter Beibehaltung aller Formatstrukturen." },
+      { question: "Verändert Sub.Stitch das Timing meiner Untertitel?", answer: "Nein, absolut nicht. Sub.Stitch behandelt Timecodes als schreibgeschützte Konstanten. Unabhängig davon, ob Sie .SRT, .VTT, .TXT oder .SUB hochladen, extrahiert unser System nur den Text, übersetzt ihn kontextsensitiv und fügt ihn wieder exakt in die Original-Timestamps ein." },
+      { question: "Ist das dasselbe wie Google Translate oder DeepL?", answer: "Nein. Standard-Übersetzer arbeiten zeilenweise, was bei abgehackten Untertitel-Sätzen fehlschlägt. Sub.Stitch verarbeitet die gesamte Datei zusammen und erfasst so Beziehungen, Humor, Geschlecht und den roten Faden der Szene." },
+      { question: "Benötige ich ein Konto, um Sub.Stitch zu nutzen?", answer: "Ja, für die Nutzung ist ein Benutzerkonto erforderlich. Sie erhalten bei der Registrierung direkt 100 kostenlose Willkommens-Credits zum Ausprobieren." },
+      { question: "Welche Dateiformate werden unterstützt?", answer: "Sub.Stitch unterstützt SubRip (.srt), WebVTT (.vtt), Reintext (.txt) und MicroDVD (.sub) unter Beibehaltung aller Formatstrukturen." },
       { question: "Sind meine Untertitel-Dateien sicher?", answer: "Ja, Sicherheit ist uns wichtig. Sämtliche Übertragungen sind SSL-verschlüsselt. Die Daten werden temporär im Arbeitsspeicher verarbeitet und spätestens 1 Stunde nach dem Download vollständig gelöscht." }
     ],
     footerPrefix: "Haben Sie eine andere technische Frage? Nutzen Sie die ",
@@ -136,11 +137,16 @@ export const GERMAN: MarketingContent = {
     subtitle: "Fragen? Feedback? Benötigen Sie ein hohes Übersetzungsvolumen? Lassen Sie es uns wissen.",
     inquiries: "Anfragen",
     replyTime: "Die durchschnittliche Antwortzeit liegt unter 12 Stunden.",
-    feedbackTitle: "Sub.Stich Feedback",
+    feedbackTitle: "Sub.Stitch Feedback",
     feedbackDesc: "Teilen Sie uns Funktionswünsche, API-Ideen oder Dateiverbesserungen mit.",
     enterpriseTitle: "Enterprise-Schnittstellen",
     enterpriseDesc: "Sichern Sie sich dedizierte Serverleistung für Video-Plattformen.",
     emailSign: "Kontakt: turlacu@live.com",
+    emailBlockLabel: "Direkte E-Mail",
+    emailBlockTitle: "Senden Sie die Details direkt aus Ihrem Postfach.",
+    emailBlockDesc: "Nennen Sie Dateityp, ungefähres Untertitelvolumen, Zielsprachen und besondere Workflow-Anforderungen.",
+    emailBlockAddressLabel: "Kontaktadresse",
+    emailBlockCta: "Sub.Stitch per E-Mail kontaktieren",
     successTitle: "Meldung erfolgreich gesendet!",
     successDesc: "Vielen Dank. Ihre Nachricht wurde an unseren Support weitergeleitet. Wir melden uns in Kürze bei Ihnen!",
     successBtn: "Eine weitere Nachricht senden",

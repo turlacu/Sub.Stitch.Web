@@ -21,7 +21,7 @@ export default function Footer() {
                 <Languages className="w-4 h-4" />
               </div>
               <span className="text-lg font-bold tracking-tight text-[#F1F5F9]">
-                Sub.<span className="font-bold bg-gradient-to-r from-[#F472B6] to-[#6366F1] bg-clip-text text-transparent">Stich</span>
+                Sub.<span className="font-bold bg-gradient-to-r from-[#F472B6] to-[#6366F1] bg-clip-text text-transparent">Stitch</span>
               </span>
             </div>
             <p className="text-xs text-[#94A3B8] font-sans font-light leading-relaxed max-w-sm">

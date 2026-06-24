@@ -14,7 +14,7 @@ export const ROMANIAN: MarketingContent = {
   problem: {
     badge: "Diferența de Traducere",
     title: "Nu mai corecta subtitrările manual.",
-    subtitle: "Majoritatea traducătoarelor automate traduc linie cu linie orbește, stricând dialogul. Sub.Stich înțelege scena, păstrând sensul, emoția și cursivitatea.",
+    subtitle: "Majoritatea traducătoarelor automate traduc linie cu linie orbește, stricând dialogul. Sub.Stitch înțelege scena, păstrând sensul, emoția și cursivitatea.",
     basicCard: {
       title: "Software de Traducere de Bază",
       desc: "Dicționar automat linie cu linie",
@@ -31,11 +31,11 @@ export const ROMANIAN: MarketingContent = {
       footer: "Necesită ore de sincronizare manuală și revizuire a textului."
     },
     subaiCard: {
-      title: "Traducător Sub.Stich",
+      title: "Traducător Sub.Stitch",
       desc: "Analizor de dialog bazat pe context",
       recBadge: "RECOMANDAT",
       successLabel: "✓ Context păstrat",
-      successEx: "*Senz corect: Sub.Stich înțelege argoul contextual și oferă un echivalent natural românesc.",
+      successEx: "*Sens corect: Sub.Stitch înțelege argoul contextual și oferă un echivalent natural românesc.",
       traits: [
         "Reconstruiește continuitatea scenei pentru maparea corectă a pronumelor/genurilor",
         "Traduce natural frazele, umorul local și expresiile colocviale",
@@ -47,7 +47,7 @@ export const ROMANIAN: MarketingContent = {
   },
   howItWorks: {
     badge: "Flux de Lucru",
-    title: "Cum funcționează Sub.Stich",
+    title: "Cum funcționează Sub.Stitch",
     subtitle: "Traduceți subtitrările fluent în patru pași simpli și optimizați. Procesați episoade întregi în mai puțin de un minut.",
     steps: [
       { step: "PASUL 01", title: "Încărcare", desc: "Trageți și lăsați fișierele .SRT, .VTT, .TXT sau .SUB în portalul nostru securizat." },
@@ -60,7 +60,7 @@ export const ROMANIAN: MarketingContent = {
   features: {
     badge: "Funcții Inteligente",
     title: "Proiectat pentru localizare premium",
-    subtitle: "Traducătoarele standard tratează textul ca pe niște documente simple. Sub.Stich tratează subtitrarea ca pe un ecosistem cinematografic viu.",
+    subtitle: "Traducătoarele standard tratează textul ca pe niște documente simple. Sub.Stitch tratează subtitrarea ca pe un ecosistem cinematografic viu.",
     items: [
       { id: "context", title: "Motor de Context AI", description: "Citește liniile precedente pentru a surprinde umorul, relațiile și continuitatea.", badge: "Unic" },
       { id: "batch", title: "Libertarea Formatelor", description: "Suportă fișiere de subtitrare în toate formatele industriale: .SRT, .VTT, .TXT sau .SUB.", badge: "Universal" },
@@ -77,13 +77,14 @@ export const ROMANIAN: MarketingContent = {
     drift: "± 0.00ms Abatere de siguranță",
     stdDraft: "Draft Traducere Standard:",
     stdWarning: "52 Caractere (Oboseală Ochi)",
-    subaiComp: "Compresie Lungime Sub.Stich:",
+    subaiComp: "Compresie Lungime Sub.Stitch:",
     subaiScore: "31 Caractere (Lectură Confortabilă)"
   },
   pricing: {
     badge: "Pachet Gratuit de Start Inclus",
     title: "Cumpără Credite. Sporește Rezultatele.",
     subtitle: "Creează un cont pentru a începe cu 100 de credite automate gratuite. Fiecare credit traduce aproximativ 10 linii de subtitrare.",
+    creditNote: "Creează un cont pentru a începe cu 100 de credite automate gratuite.",
     tiers: [
       {
         id: "starter",
@@ -120,10 +121,10 @@ export const ROMANIAN: MarketingContent = {
     title: "Întrebări Frecvente",
     subtitle: "Tot ce trebuie să știți despre traducătorul nostru de subtitrări bazat pe context.",
     items: [
-      { question: "Modifică Sub.Stich sincronizarea subtitrărilor mele?", answer: "Absolut deloc. Sub.Stich tratează codurile de timp ale subtitrărilor ca pe niște constante doar pentru citire. Indiferent dacă încărcați .SRT, .VTT, .TXT sau .SUB, parserul nostru extrage strict blocurile de text, le traduce și apoi le mapează înapoi la coordonatele de timp originale exacte." },
-      { question: "Este la fel ca Google Translate sau DeepL?", answer: "Nu. Traducătoarele online standard procesează textul linie cu linie, ceea ce distruge cursivitatea deoarece subtitrările sunt adesea dialoguri fragmentate. Sub.Stich analizează întregul fișier împreună pentru a înțelege cine vorbește, sarcasmul, contextul de gen și continuarea propoziției." },
-      { question: "Am nevoie de un cont pentru a folosi Sub.Stich?", answer: "Da, trebuie să creeți un cont. Vestea bună este că fiecare utilizator nou primește 100 de credite gratuite la înregistrare pentru a experimenta gratuit serviciile noastre!" },
-      { question: "Ce tipuri de fișiere de subtitrare sunt acceptate?", answer: "Sub.Stich acceptă complet formatele SubRip (.srt), WebVTT (.vtt), Text Simplu (.txt) și MicroDVD (.sub), păstrând dialogul aliniat și metadatele curate." },
+      { question: "Modifică Sub.Stitch sincronizarea subtitrărilor mele?", answer: "Absolut deloc. Sub.Stitch tratează codurile de timp ale subtitrărilor ca pe niște constante doar pentru citire. Indiferent dacă încărcați .SRT, .VTT, .TXT sau .SUB, parserul nostru extrage strict blocurile de text, le traduce și apoi le mapează înapoi la coordonatele de timp originale exacte." },
+      { question: "Este la fel ca Google Translate sau DeepL?", answer: "Nu. Traducătoarele online standard procesează textul linie cu linie, ceea ce distruge cursivitatea deoarece subtitrările sunt adesea dialoguri fragmentate. Sub.Stitch analizează întregul fișier împreună pentru a înțelege cine vorbește, sarcasmul, contextul de gen și continuarea propoziției." },
+      { question: "Am nevoie de un cont pentru a folosi Sub.Stitch?", answer: "Da, trebuie să creeți un cont. Vestea bună este că fiecare utilizator nou primește 100 de credite gratuite la înregistrare pentru a experimenta gratuit serviciile noastre!" },
+      { question: "Ce tipuri de fișiere de subtitrare sunt acceptate?", answer: "Sub.Stitch acceptă complet formatele SubRip (.srt), WebVTT (.vtt), Text Simplu (.txt) și MicroDVD (.sub), păstrând dialogul aliniat și metadatele curate." },
       { question: "Sunt fișierele mele de subtitrare private?", answer: "Yes, securitatea este o prioritate cheie. Folosim criptare SSL sigură pentru toate transferurile. Fișierele sunt stocate temporar în RAM și șterse automat de pe serverele noastre la 1 oră după descărcare." }
     ],
     footerPrefix: "Aveți o întrebare tehnică diferită? Vizitați ",
@@ -136,11 +137,16 @@ export const ROMANIAN: MarketingContent = {
     subtitle: "Întrebări? Feedback? Aveți nevoie de un volum mare de traduceri premium? Scrieți-ne.",
     inquiries: "Întrebări",
     replyTime: "Timpul mediu de răspuns este de sub 12 ore.",
-    feedbackTitle: "Feedback Sub.Stich",
+    feedbackTitle: "Feedback Sub.Stitch",
     feedbackDesc: "Spuneți-ne despre funcțiile care lipsesc, idei de API-uri sau sugestii.",
     enterpriseTitle: "Planuri Enterprise",
     enterpriseDesc: "Solicitați servere dedicate cu înaltă performanță pentru platforme video.",
     emailSign: "Contact: turlacu@live.com",
+    emailBlockLabel: "E-mail direct",
+    emailBlockTitle: "Trimite detaliile din inboxul tău.",
+    emailBlockDesc: "Include tipul de fișier, volumul aproximativ de subtitrări, limbile țintă și orice cerințe de workflow.",
+    emailBlockAddressLabel: "Adresă de contact",
+    emailBlockCta: "Trimite e-mail către Sub.Stitch",
     successTitle: "Mesajul a fost Trimis!",
     successDesc: "Vă mulțumim. Solicitarea dvs. a fost trimisă direct la biroul nostru de asistență. Vă vom răspunde în curând!",
     successBtn: "Trimiteți alt mesaj",

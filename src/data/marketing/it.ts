@@ -14,7 +14,7 @@ export const ITALIAN: MarketingContent = {
   problem: {
     badge: "Il Divario di Traduzione",
     title: "Smetti di correggere i sottotitoli manualmente.",
-    subtitle: "I traduttori standard effettuano una conversione parola per parola sterile, rovinando i dialoghi. Sub.Stich comprende l'intera scena.",
+    subtitle: "I traduttori standard effettuano una conversione parola per parola sterile, rovinando i dialoghi. Sub.Stitch comprende l'intera scena.",
     basicCard: {
       title: "Software Traduttore Standard",
       desc: "Dizionario automatico lineare riga per riga",
@@ -31,11 +31,11 @@ export const ITALIAN: MarketingContent = {
       footer: "Richiede diverse ore di faticosa correzione manuale post-traduzione."
     },
     subaiCard: {
-      title: "Traduttore Professionale Sub.Stich",
+      title: "Traduttore Professionale Sub.Stitch",
       desc: "Parser di dialoghi basato su contesto",
       recBadge: "RACCOMANDATO",
       successLabel: "✓ Contesto preservato",
-      successEx: "*Senso corretto: Sub.Stich rileva la battuta colloquiale e genera una perfetta frase equivalente.",
+      successEx: "*Senso corretto: Sub.Stitch rileva la battuta colloquiale e genera una perfetta frase equivalente.",
       traits: [
         "Ricostruisce la fluidità della scena per assegnare bene i pronomi",
         "Produce riscontri naturali per slang, humor locale e battute",
@@ -47,7 +47,7 @@ export const ITALIAN: MarketingContent = {
   },
   howItWorks: {
     badge: "Come Funziona",
-    title: "Il flusso Sub.Stich",
+    title: "Il flusso Sub.Stitch",
     subtitle: "Traduci i tuoi sottotitoli in 4 semplici passaggi ottimizzati. Un'intera clip pronta in meno di un minuto.",
     steps: [
       { step: "PASSO 01", title: "Carica", desc: "Trascina i tuoi file .SRT, .VTT, .TXT o .SUB nel nostro portale sicuro." },
@@ -60,7 +60,7 @@ export const ITALIAN: MarketingContent = {
   features: {
     badge: "Funzionalità Chiave",
     title: "Progettato per una localizzazione d'élite",
-    subtitle: "I traduttori standard vedono i sottotitoli come testi piatti. Sub.Stich li elabora come una trama cinematografica in movimento.",
+    subtitle: "I traduttori standard vedono i sottotitoli come testi piatti. Sub.Stitch li elabora come una trama cinematografica in movimento.",
     items: [
       { id: "context", title: "Engine Contestuale", description: "Esamina la battuta precedente per catturare sarcasmo, confidenza e contesto.", badge: "Unico" },
       { id: "batch", title: "Libertà Formati", description: "Traduce sottotitoli in tutti i formati standard : .SRT, .VTT, .TXT o .SUB.", badge: "Universale" },
@@ -77,13 +77,14 @@ export const ITALIAN: MarketingContent = {
     drift: "± 0.00ms di drift garantito",
     stdDraft: "Bozza Traduttore Online Comune:",
     stdWarning: "52 caratteri (Sforzo visivo)",
-    subaiComp: "Compressione Lunghezza Sub.Stich:",
+    subaiComp: "Compressione Lunghezza Sub.Stitch:",
     subaiScore: "31 caratteri (Lettura fluida)"
   },
   pricing: {
     badge: "Pacchetto Iniziale Gratuito Incluso",
     title: "Acquista Crediti. Eleva i tuoi Sottotitoli.",
     subtitle: "Apri un account per tradurre con i primi 100 crediti in regalo. Ciascun credito traduce all'incirca 10 righe.",
+    creditNote: "Apri un account per tradurre con i primi 100 crediti in regalo.",
     tiers: [
       {
         id: "starter",
@@ -120,11 +121,11 @@ export const ITALIAN: MarketingContent = {
     title: "Domande Frequenti",
     subtitle: "Tutto ciò che occorre sapere sulla nostra tecnologia per sottotitoli professionali.",
     items: [
-      { question: "Sub.Stich modifica i tempi dei miei sottotitoli?", answer: "No, in nessun caso. Trattiamo i timecodes originali come elementi di sola lettura. Estraiamo il testo puro, effettuiamo la traduzione intelligente, e lo reinseriamo ai medesimi millisecondi originali." },
-      { question: "È come Google Traduttore o DeepL?", answer: "No. I traduttori comuni lavorano su righe scollegate. Il motore di Sub.Stich le elabora insieme per comprendere i personaggi, il sarcasmo, i generi e l'intrigo." },
+      { question: "Sub.Stitch modifica i tempi dei miei sottotitoli?", answer: "No, in nessun caso. Trattiamo i timecodes originali come elementi di sola lettura. Estraiamo il testo puro, effettuiamo la traduzione intelligente, e lo reinseriamo ai medesimi millisecondi originali." },
+      { question: "È come Google Traduttore o DeepL?", answer: "No. I traduttori comuni lavorano su righe scollegate. Il motore di Sub.Stitch le elabora insieme per comprendere i personaggi, il sarcasmo, i generi e l'intrigo." },
       { question: "Occorre creare per forza un account?", answer: "Sì, la creazione di un account protegge il tuo saldo di crediti. Ogni utente riceve i primi 100 crediti omaggio in prova." },
       { question: "Quali estensioni di file accetta il sistema?", answer: "Supportiamo pienamente file SubRip (.srt), WebVTT (.vtt), Testo Semplice (.txt) e MicroDVD (.sub), salvando i metadati." },
-      { question: "La mia privacy è al sicuro su Sub.Stich?", answer: "Sì, la riservatezza è protetta da protocollo di sicurezza SSL. L'elaborazione avviene in RAM temporanea e gli elementi cached evaporano un'ora dopo il download." }
+      { question: "La mia privacy è al sicuro su Sub.Stitch?", answer: "Sì, la riservatezza è protetta da protocollo di sicurezza SSL. L'elaborazione avviene in RAM temporanea e gli elementi cached evaporano un'ora dopo il download." }
     ],
     footerPrefix: "Hai altri interrogativi tecnici? Visita l' ",
     directApp: "Applicazione Diretta",
@@ -141,6 +142,11 @@ export const ITALIAN: MarketingContent = {
     enterpriseTitle: "Uso Enterprise",
     enterpriseDesc: "Ottieni server dedicati VIP ad elevate prestazioni per i tuoi flussi multimediali.",
     emailSign: "Contatto: turlacu@live.com",
+    emailBlockLabel: "E-mail diretta",
+    emailBlockTitle: "Invia i dettagli dalla tua casella e-mail.",
+    emailBlockDesc: "Includi il tipo di file, il volume approssimativo di sottotitoli, le lingue target e qualsiasi vincolo di workflow.",
+    emailBlockAddressLabel: "Indirizzo di contatto",
+    emailBlockCta: "Invia un'e-mail a Sub.Stitch",
     successTitle: "Messaggio inoltrato con successo!",
     successDesc: "Ti ringraziamo per l'interesse. Abbiamo ricevuto la tua scheda. Ti risponderemo prontamente!",
     successBtn: "Invia un altro messaggio",
