@@ -62,10 +62,7 @@ export const ITALIAN: MarketingContent = {
     title: "Progettato per una localizzazione d'élite",
     subtitle: "I traduttori standard vedono i sottotitoli come testi piatti. Sub.Stitch li elabora come una trama cinematografica in movimento.",
     items: [
-      { id: "context", title: "Engine Contestuale", description: "Esamina la battuta precedente per catturare sarcasmo, confidenza e contesto.", badge: "Unico" },
-      { id: "batch", title: "Libertà Formati", description: "Traduce sottotitoli in tutti i formati standard : .SRT, .VTT, .TXT o .SUB.", badge: "Universale" },
       { id: "timing", title: "Protezione Tempo", description: "I millisecondi originari di calettatura rimangono stabili, senza drift.", badge: "Protetto" },
-      { id: "length", title: "Regolazione Lunghezza", description: "Struttura le risposte per garantire un numero comodo di sillabe a schermo.", badge: "UX-Aware" },
       { id: "preview", title: "Anteprima in Tempo Reale", description: "Leggi la riga tradotta accanto a quella originale prima di validare.", badge: "Smart preview" },
       { id: "creator", title: "Workflow Creatori", description: "Progettato su misura per agenzie e canali YouTube professionisti.", badge: "Premium" }
     ],

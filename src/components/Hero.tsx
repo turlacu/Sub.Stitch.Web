@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
 import { 
   ArrowRight
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
 
-// Floating particles for our highly visible animated background
+// Floating particles for a subtle desktop background texture
 interface Particle {
   id: number;
   x: number;
@@ -16,27 +15,18 @@ interface Particle {
   color: string;
 }
 
+const desktopParticles: Particle[] = [
+  { id: 1, x: 16, y: 24, size: 120, duration: 34, delay: 0, color: "bg-[#F472B6]/10" },
+  { id: 2, x: 74, y: 18, size: 150, duration: 42, delay: 2, color: "bg-[#6366F1]/10" },
+  { id: 3, x: 86, y: 66, size: 110, duration: 38, delay: 4, color: "bg-[#22D3EE]/10" },
+  { id: 4, x: 24, y: 72, size: 135, duration: 45, delay: 1, color: "bg-[#EC4899]/8" },
+  { id: 5, x: 50, y: 38, size: 95, duration: 36, delay: 3, color: "bg-[#D946EF]/8" },
+  { id: 6, x: 62, y: 82, size: 125, duration: 48, delay: 5, color: "bg-indigo-500/9" }
+];
+
 export default function Hero() {
   const { t, marketingContent } = useLanguage();
   const appUrl = "https://studio.substitch.app/";
-
-  // Background animated nodes
-  const [particles, setParticles] = useState<Particle[]>([]);
-
-  useEffect(() => {
-    // Generate organic drifting high-vibrancy glowing bokeh circles
-    const items: Particle[] = [
-      { id: 1, x: 10, y: 15, size: 280, duration: 25, delay: 0, color: "bg-[#F472B6]/20" },
-      { id: 2, x: 78, y: 12, size: 320, duration: 32, delay: 1, color: "bg-[#6366F1]/18" },
-      { id: 3, x: 85, y: 65, size: 240, duration: 28, delay: 2, color: "bg-[#22D3EE]/22" },
-      { id: 4, x: 12, y: 70, size: 300, duration: 30, delay: 3, color: "bg-[#EC4899]/18" },
-      { id: 5, x: 45, y: 35, size: 260, duration: 22, delay: 1, color: "bg-[#D946EF]/20" },
-      { id: 6, x: 55, y: 78, size: 310, duration: 35, delay: 4, color: "bg-indigo-600/18" },
-      { id: 7, x: 28, y: 45, size: 220, duration: 26, delay: 2, color: "bg-pink-500/18" },
-      { id: 8, x: 92, y: 38, size: 250, duration: 29, delay: 1, color: "bg-cyan-500/20" }
-    ];
-    setParticles(items);
-  }, []);
 
   return (
     <section
@@ -45,55 +35,60 @@ export default function Hero() {
     >
       {/* ==================== HIGHLY POLISHED ANIMATED BACKGROUND ==================== */}
       
-      {/* 1. Slowly moving cosmic neon gradients with improved visibility */}
+      {/* 1. Static mobile backdrop avoids flickering from large animated blur layers */}
+      <div className="absolute inset-0 pointer-events-none md:hidden bg-[radial-gradient(circle_at_18%_18%,rgba(244,114,182,0.24),transparent_34%),radial-gradient(circle_at_82%_22%,rgba(99,102,241,0.22),transparent_36%),radial-gradient(circle_at_58%_76%,rgba(34,211,238,0.14),transparent_40%)]" />
+
+      {/* 2. Desktop ambient field: slow, balanced, and non-distracting */}
+      <div className="absolute inset-0 hidden md:block pointer-events-none bg-[radial-gradient(circle_at_22%_24%,rgba(244,114,182,0.12),transparent_30%),radial-gradient(circle_at_76%_28%,rgba(99,102,241,0.14),transparent_34%),radial-gradient(circle_at_52%_82%,rgba(34,211,238,0.08),transparent_38%)]" />
+
       <motion.div 
         animate={{
-          scale: [1, 1.25, 0.85, 1],
-          x: [0, 50, -45, 0],
-          y: [0, -60, 30, 0]
+          x: ["-6%", "7%", "-2%", "-6%"],
+          y: ["0%", "-5%", "4%", "0%"],
+          opacity: [0.7, 0.95, 0.78, 0.7]
         }}
         transition={{
-          duration: 22,
+          duration: 36,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-0 left-1/4 w-[650px] h-[650px] rounded-full bg-gradient-to-tr from-[#6366F1]/20 via-[#4F46E5]/18 to-[#F472B6]/28 blur-[100px] pointer-events-none" 
+        className="absolute top-[-22%] left-[8%] hidden md:block h-[520px] w-[780px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(244,114,182,0.18),rgba(99,102,241,0.10)_42%,transparent_70%)] blur-[88px] pointer-events-none will-change-transform"
       />
       
       <motion.div 
         animate={{
-          scale: [1, 0.82, 1.22, 1],
-          x: [0, -75, 50, 0],
-          y: [0, 45, -65, 0]
+          x: ["5%", "-7%", "3%", "5%"],
+          y: ["4%", "-4%", "2%", "4%"],
+          opacity: [0.68, 0.9, 0.74, 0.68]
         }}
         transition={{
-          duration: 26,
+          duration: 44,
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-0 right-1/4 w-[750px] h-[750px] rounded-full bg-gradient-to-tr from-[#22D3EE]/22 via-[#0891B2]/15 to-[#6366F1]/22 blur-[110px] pointer-events-none" 
+        className="absolute bottom-[-30%] right-[2%] hidden md:block h-[580px] w-[900px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.12),rgba(99,102,241,0.12)_42%,transparent_72%)] blur-[96px] pointer-events-none will-change-transform"
       />
 
       <motion.div 
         animate={{
-          scale: [0.9, 1.15, 1, 0.9],
-          x: [-30, 30, -15, -30],
-          y: [30, -30, 50, 30]
+          x: ["-18%", "118%"],
+          opacity: [0, 0.34, 0]
         }}
         transition={{
-          duration: 18,
+          duration: 12,
           repeat: Infinity,
+          repeatDelay: 7,
           ease: "easeInOut"
         }}
-        className="absolute top-1/3 left-10 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-[#EC4899]/20 to-[#D946EF]/22 blur-[120px] pointer-events-none animate-pulse" 
+        className="absolute top-[18%] left-0 hidden md:block h-px w-[42rem] bg-gradient-to-r from-transparent via-[#F472B6]/35 to-transparent pointer-events-none will-change-transform"
       />
 
-      {/* 2. Seamless subtle background grid pattern mapping */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293733_1px,transparent_1px),linear-gradient(to_bottom,#1f293733_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-60" />
+      {/* 3. Seamless subtle background grid pattern mapping */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293733_1px,transparent_1px),linear-gradient(to_bottom,#1f293733_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none opacity-30 md:opacity-60" />
 
-      {/* 3. Floating, drifting interactive vibrant bokeh circles (Fully visible, no text tags) */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
-        {particles.map((p) => {
+      {/* 4. Desktop-only drifting bokeh circles. Mobile uses the static backdrop above for stability. */}
+      <div className="absolute inset-0 hidden md:block overflow-hidden pointer-events-none select-none z-0">
+        {desktopParticles.map((p) => {
           return (
             <motion.div
               key={p.id}
@@ -103,10 +98,10 @@ export default function Hero() {
                 opacity: 0.15 
               }}
               animate={{
-                y: [`${p.y}vh`, `${(p.y + 15) % 100}vh`, `${p.y}vh`],
-                x: [`${p.x}vw`, `${(p.x + 8) % 100}vw`, `${p.x}vw`],
-                opacity: [0.15, 0.38, 0.25, 0.15],
-                scale: [1, 1.12, 0.92, 1]
+                y: [`${p.y}vh`, `${(p.y + 8) % 100}vh`, `${p.y}vh`],
+                x: [`${p.x}vw`, `${(p.x + 5) % 100}vw`, `${p.x}vw`],
+                opacity: [0.08, 0.18, 0.12, 0.08],
+                scale: [1, 1.06, 0.98, 1]
               }}
               transition={{
                 duration: p.duration,
@@ -118,12 +113,14 @@ export default function Hero() {
             >
               <div 
                 style={{ width: p.size, height: p.size }} 
-                className={`rounded-full ${p.color} blur-3xl`}
+                className={`rounded-full ${p.color} blur-2xl`}
               />
             </motion.div>
           );
         })}
       </div>
+
+      <div className="absolute inset-x-0 bottom-0 hidden h-48 md:block pointer-events-none bg-gradient-to-t from-[#030712] to-transparent" />
 
       {/* ==================== CONTENT CORE ==================== */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-10">

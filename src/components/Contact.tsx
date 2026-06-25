@@ -1,4 +1,6 @@
 import { Mail, MessageSquare, HelpCircle, ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
+import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Contact() {
@@ -15,7 +17,7 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section title */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-block mb-2 text-xs font-bold tracking-widest text-[#F472B6] uppercase font-mono px-3 py-1 bg-[#F472B6]/10 rounded-full border border-[#F472B6]/20">
             {content.contact.badge}
           </span>
@@ -25,10 +27,10 @@ export default function Contact() {
           <p className="text-base text-[#94A3B8] font-sans font-light">
             {content.contact.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Contact panel card */}
-        <div className="bg-[#1E293B]/20 border border-[#334155] rounded-3xl overflow-hidden shadow-2xl shadow-black/45 grid grid-cols-1 md:grid-cols-12 max-w-3xl mx-auto relative">
+        <Reveal className="bg-[#1E293B]/20 border border-[#334155] rounded-3xl overflow-hidden shadow-2xl shadow-black/45 grid grid-cols-1 md:grid-cols-12 max-w-3xl mx-auto relative">
           
           {/* Card Left: quick info items */}
           <div className="md:col-span-5 bg-[#020617]/50 p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#334155]/60">
@@ -39,9 +41,9 @@ export default function Contact() {
               </div>
 
               <div className="space-y-5">
-                <div className="flex gap-3">
+                <div className="flex gap-3 group/item">
                   <div className="p-2 rounded-xl bg-[#1E293B]/60 text-[#F472B6] border border-[#334155]/60 h-fit">
-                    <MessageSquare className="w-4 h-4" />
+                    <MessageSquare className="w-4 h-4 transition-transform duration-200 group-hover/item:scale-110" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-[#F1F5F9] uppercase font-mono tracking-wider">{content.contact.feedbackTitle}</h4>
@@ -49,9 +51,9 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-3 group/item">
                   <div className="p-2 rounded-xl bg-[#1E293B]/60 text-[#22D3EE] border border-[#334155]/60 h-fit">
-                    <Mail className="w-4 h-4" />
+                    <Mail className="w-4 h-4 transition-transform duration-200 group-hover/item:scale-110" />
                   </div>
                   <div>
                     <h4 className="text-xs font-bold text-[#F1F5F9] uppercase font-mono tracking-wider">{content.contact.enterpriseTitle}</h4>
@@ -96,18 +98,19 @@ export default function Contact() {
                 </a>
               </div>
 
-              <a
+              <motion.a
                 id="contact-email-link"
                 href={mailtoHref}
+                whileTap={{ scale: 0.98 }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold rounded-xl text-slate-950 bg-gradient-to-r from-[#F472B6] to-[#6366F1] shadow-[0_0_15px_rgba(244,114,182,0.25)] hover:shadow-[0_0_20px_rgba(244,114,182,0.45)] hover:scale-[1.01] transition-all duration-300"
               >
                 <span>{content.contact.emailBlockCta}</span>
                 <ArrowUpRight className="w-4 h-4 text-slate-950" />
-              </a>
+              </motion.a>
             </div>
           </div>
 
-        </div>
+        </Reveal>
 
       </div>
     </section>

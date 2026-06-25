@@ -1,4 +1,6 @@
 import { Check, Sparkles } from "lucide-react";
+import { motion } from "motion/react";
+import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Pricing() {
@@ -13,7 +15,7 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <Reveal className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <span className="inline-block mb-2 text-xs font-bold tracking-widest text-[#6366F1] uppercase font-mono px-3 py-1 bg-[#6366F1]/10 rounded-full border border-[#6366F1]/20">
             {content.pricing.badge}
           </span>
@@ -23,16 +25,21 @@ export default function Pricing() {
           <p className="text-base sm:text-lg text-[#94A3B8] font-sans font-light leading-relaxed">
             {content.pricing.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Pricing Cards Row */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
           {content.pricing.tiers.map((tier, index) => {
             const isHighlighted = tier.id === "standard";
             return (
-              <div
+              <motion.div
                 key={tier.id}
                 id={`pricing-tier-${tier.id}`}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: isHighlighted ? -7 : -5 }}
+                viewport={{ once: true, amount: 0.24 }}
+                transition={{ duration: 0.35, delay: index * 0.06, ease: "easeOut" }}
                 className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] ${
                   isHighlighted
                     ? "bg-[#1E293B]/40 border-2 border-[#F472B6]/80 shadow-[0_0_30px_rgba(244,114,182,0.15)]"
@@ -84,12 +91,13 @@ export default function Pricing() {
 
                 {/* Tier Button CTA */}
                 <div className="relative z-10 mt-8 pt-4">
-                  <a
+                  <motion.a
                     id={`pricing-btn-${tier.id}`}
                     href="https://studio.substitch.app/"
                     target="_blank"
                     referrerPolicy="no-referrer"
                     rel="noopener noreferrer"
+                    whileTap={{ scale: 0.98 }}
                     className={`w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold rounded-xl transition-all duration-300 ${
                       isHighlighted
                         ? "text-slate-900 bg-gradient-to-r from-[#F472B6] to-[#6366F1] shadow-[0_0_15px_rgba(244,114,182,0.3)] hover:shadow-[0_0_20px_rgba(244,114,182,0.5)]"
@@ -98,16 +106,16 @@ export default function Pricing() {
                   >
                     <span>{t("openApp")}</span>
                     <Sparkles className="w-4 h-4 shadow-sm" />
-                  </a>
+                  </motion.a>
                 </div>
 
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Custom enterprise contact helper */}
-        <div className="mt-16 text-center text-sm text-[#94A3B8] relative z-10">
+        <Reveal className="mt-16 text-center text-sm text-[#94A3B8] relative z-10" delay={0.08}>
           <p className="font-sans font-light">
             {content.pricing.footerText}{" "}
             <a
@@ -118,7 +126,7 @@ export default function Pricing() {
               {content.pricing.contactUs}
             </a>
           </p>
-        </div>
+        </Reveal>
 
       </div>
     </section>

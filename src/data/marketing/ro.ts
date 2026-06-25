@@ -62,10 +62,7 @@ export const ROMANIAN: MarketingContent = {
     title: "Proiectat pentru localizare premium",
     subtitle: "Traducătoarele standard tratează textul ca pe niște documente simple. Sub.Stitch tratează subtitrarea ca pe un ecosistem cinematografic viu.",
     items: [
-      { id: "context", title: "Motor de Context AI", description: "Citește liniile precedente pentru a surprinde umorul, relațiile și continuitatea.", badge: "Unic" },
-      { id: "batch", title: "Libertarea Formatelor", description: "Suportă fișiere de subtitrare în toate formatele industriale: .SRT, .VTT, .TXT sau .SUB.", badge: "Universal" },
       { id: "timing", title: "Protecție Timp", description: "Intervalele originale de milisecunde sunt blocate exact ca constante la încărcare.", badge: "Imbatabil" },
-      { id: "length", title: "Optimizare Lungime", description: "Configurează frazele de ieșire astfel încât să aibă un număr confortabil de caractere.", badge: "UX-Aware" },
       { id: "preview", title: "Mod Previzualizare Directă", description: "Iterați previzualizând liniile traduse una lângă alta cu textul original.", badge: "Smart preview" },
       { id: "creator", title: "Flux pentru Creatori", description: "Creat special pentru cerințele realizatorilor de filme, creatorilor YouTube și caselor de producție.", badge: "Personalizat" }
     ],

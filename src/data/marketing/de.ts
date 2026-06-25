@@ -62,10 +62,7 @@ export const GERMAN: MarketingContent = {
     title: "Entwickelt für Premium-Lokalisierung",
     subtitle: "Standard-Übersetzer behandeln Text wie einfache Dokumentenblätter. Sub.Stitch betrachtet Untertitel als lebendiges Kino-Ökosystem.",
     items: [
-      { id: "context", title: "KI-Kontext-Engine", description: "Liest die vorhergehenden Zeilen, um Humor und Beziehungen zu erfassen.", badge: "Einzigartig" },
-      { id: "batch", title: "Formatfreiheit", description: "Unterstützt alle branchenüblichen Formate: .SRT, .VTT, .TXT oder .SUB.", badge: "Universell" },
       { id: "timing", title: "Timing-Schutz", description: "Die ursprünglichen Millisekunden-Timecodes werden fest verankert.", badge: "Kugelsicher" },
-      { id: "length", title: "Längenoptimierung", description: "Sorgt für einlesbare Sätze mit angenehmer Zeichenzahl pro Sekunde.", badge: "UX-Aware" },
       { id: "preview", title: "Direkte Vorschau", description: "Vergleichen Sie übersetzte Zeilen vor dem Download direkt neben dem Original.", badge: "Smarte Vorschau" },
       { id: "creator", title: "Creator-Workflow", description: "Speziell auf die Bedürfnisse von YouTubern, Filmemachern und Studios zugeschnitten.", badge: "Maßgeschneidert" }
     ],

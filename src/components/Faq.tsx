@@ -2,6 +2,7 @@ import { useState } from "react";
 import { HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { motion, AnimatePresence } from "motion/react";
+import Reveal from "./Reveal";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -20,7 +21,7 @@ export default function Faq() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header copy */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-block mb-2 text-xs font-bold tracking-widest text-[#22D3EE] uppercase font-mono px-3 py-1 bg-[#22D3EE]/10 rounded-full border border-[#22D3EE]/20">
             {content.faq.badge}
           </span>
@@ -30,16 +31,21 @@ export default function Faq() {
           <p className="text-base text-[#94A3B8] font-sans font-light">
             {content.faq.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Accordions Stack */}
         <div className="space-y-4">
           {content.faq.items.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div
+              <motion.div
                 key={index}
                 id={`faq-item-${index}`}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -2 }}
+                viewport={{ once: true, amount: 0.16 }}
+                transition={{ duration: 0.28, delay: index * 0.025, ease: "easeOut" }}
                 className={`bg-[#1E293B]/10 rounded-2xl border transition-all duration-300 ${
                   isOpen
                     ? "border-[#F472B6]/60 bg-[#1E293B]/25 shadow-lg shadow-pink-950/5"
@@ -84,13 +90,13 @@ export default function Faq() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Question Footer badge */}
-        <div className="mt-12 text-center bg-[#1E293B]/10 rounded-2xl border border-[#334155]/40 p-4 max-w-lg mx-auto text-xs sm:text-sm text-[#94A3B8]">
+        <Reveal className="mt-12 text-center bg-[#1E293B]/10 rounded-2xl border border-[#334155]/40 p-4 max-w-lg mx-auto text-xs sm:text-sm text-[#94A3B8]">
           {content.faq.footerPrefix}
           <a
             id="faq-app-link"
@@ -103,7 +109,7 @@ export default function Faq() {
             {content.faq.directApp}
           </a>
           {content.faq.footerSuffix}
-        </div>
+        </Reveal>
 
       </div>
     </section>

@@ -62,10 +62,7 @@ export const ENGLISH: MarketingContent = {
     title: "Engineered for premium localization",
     subtitle: "Standard translators treat text like plain sheets of documents. Sub.Stitch treats your subtitle like a living cinematic ecosystem.",
     items: [
-      { id: "context", title: "AI Context Engine", description: "Reads preceding lines to grasp humor, relationships, and continuity.", badge: "Unique" },
-      { id: "batch", title: "Format Freedom", description: "Supports subtitle files across all formats: .SRT, .VTT, .TXT or .SUB.", badge: "Universal" },
       { id: "timing", title: "Timing Protection", description: "Original millisecond timeframes are locked exactly as upload constants.", badge: "Bulletproof" },
-      { id: "length", title: "Length Optimization", description: "Configures output sentences so they contain comfortable char-counts.", badge: "UX-Aware" },
       { id: "preview", title: "Direct Preview Mode", description: "Iterate alongside our layout by previewing translated lines side-by-side.", badge: "Smart preview" },
       { id: "creator", title: "Creator Workflow", description: "Engineered specifically to fulfill requirements for filmmakers, YouTube creators, and content houses.", badge: "Tailored" }
     ],

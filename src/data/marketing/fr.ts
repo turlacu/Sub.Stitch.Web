@@ -62,10 +62,7 @@ export const FRENCH: MarketingContent = {
     title: "Une localisation de qualité professionnelle",
     subtitle: "Les traducteurs basiques traitent les sous-titres comme de simples textes bruts. Sub.Stitch les gère comme une intrigue vivante.",
     items: [
-      { id: "context", title: "Moteur Contextuel IA", description: "Analyse les lignes précédentes pour saisir l'humour, la complicité et l'intrigue.", badge: "Unique" },
-      { id: "batch", title: "Multi-Formats", description: "Prise en charge de tous les formats professionnels : .SRT, .VTT, .TXT ou .SUB.", badge: "Universel" },
       { id: "timing", title: "Verrou Temporel", description: "Les repères temporels d'origine restent protégés à la milliseconde près.", badge: "Verrouillé" },
-      { id: "length", title: "Optimisation de Lecture", description: "Régule la longueur des phrases pour s'adapter naturellement à l'oeil humain.", badge: "UX-Aware" },
       { id: "preview", title: "Aperçu en Direct", description: "Examinez les lignes traduites à côté des originales avant de valider.", badge: "Aperçu Malin" },
       { id: "creator", title: "Workflow Créateur", description: "Parfaitement adapté aux vidéastes, aux chaînes YouTube et aux studios de doublage.", badge: "Haut de Gamme" }
     ],

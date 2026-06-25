@@ -1,4 +1,6 @@
 import { FileUp, Sliders, Cpu, FileCheck } from "lucide-react";
+import { motion } from "motion/react";
+import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
 
 const icons = [FileUp, Sliders, Cpu, FileCheck];
@@ -16,7 +18,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
+        <Reveal className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <span className="inline-block mb-2 text-xs font-bold tracking-widest text-[#22D3EE] uppercase font-mono px-3 py-1 bg-[#22D3EE]/10 rounded-full border border-[#22D3EE]/20">
             {content.howItWorks.badge}
           </span>
@@ -26,7 +28,7 @@ export default function HowItWorks() {
           <p className="text-base sm:text-lg text-[#94A3B8] font-light leading-relaxed">
             {content.howItWorks.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Steps container */}
         <div className="relative">
@@ -38,9 +40,15 @@ export default function HowItWorks() {
             {content.howItWorks.steps.map((stepItem, index) => {
               const Icon = icons[index] || Cpu;
               return (
-                <div
+                <motion.div
                   key={index}
                   id={`how-it-works-step-${index}`}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -5 }}
+                  whileTap={{ scale: 0.985 }}
+                  viewport={{ once: true, amount: 0.28 }}
+                  transition={{ duration: 0.35, delay: index * 0.04, ease: "easeOut" }}
                   className="group flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 bg-[#1E293B]/20 p-6 rounded-2xl border border-[#334155]/40 hover:border-[#F472B6]/40 hover:bg-[#1E293B]/30 transition-all duration-300 hover:scale-[1.02] shadow-lg"
                 >
                   {/* Step Header details / Icon container */}
@@ -63,7 +71,7 @@ export default function HowItWorks() {
                     </p>
                   </div>
 
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -71,18 +79,20 @@ export default function HowItWorks() {
         </div>
 
         {/* Bottom helpful message */}
-        <div className="mt-16 text-center">
-          <a
+        <Reveal className="mt-16 text-center" delay={0.08}>
+          <motion.a
             id="how-it-works-start-cta"
             href="https://studio.substitch.app/"
             target="_blank"
             referrerPolicy="no-referrer"
             rel="noopener noreferrer"
+            whileHover={{ x: 4 }}
+            whileTap={{ scale: 0.98 }}
             className="inline-flex items-center gap-2 text-sm text-[#F472B6] hover:text-[#22D3EE] font-mono hover:underline group cursor-pointer transition-colors"
           >
             {content.howItWorks.bottomCta}
-          </a>
-        </div>
+          </motion.a>
+        </Reveal>
 
       </div>
     </section>

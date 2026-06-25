@@ -1,4 +1,6 @@
 import { Zap, Brain, Timer, Globe, Lock } from "lucide-react";
+import { motion } from "motion/react";
+import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
 
 const iconMap: Record<string, any> = {
@@ -17,13 +19,16 @@ export default function TrustStrip() {
       <div className="absolute inset-0 bg-gradient-to-r from-pink-500/5 via-transparent to-indigo-500/5 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="sr-only">{content.trust.title}</h2>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6">
+        <Reveal className="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6">
           {content.trust.badges.map((badge, idx) => {
             const IconComponent = iconMap[badge.icon] || Zap;
             return (
-              <div
+              <motion.div
                 key={`${badge.text}-${idx}`}
                 id={`trust-badge-${idx}`}
+                whileHover={{ y: -4 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.18, ease: "easeOut" }}
                 className="group p-4 sm:p-5 rounded-2xl bg-[#1E293B]/20 border border-[#334155]/40 hover:border-[#F472B6]/40 transition-all duration-300 hover:scale-[1.03] shadow-lg shadow-black/10 flex flex-col items-center text-center space-y-2.5"
               >
                 <div className="p-2 sm:p-3 rounded-xl bg-[#020617] border border-[#334155]/60 text-slate-100 group-hover:text-[#F472B6] transition-colors duration-300">
@@ -37,10 +42,10 @@ export default function TrustStrip() {
                     {badge.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

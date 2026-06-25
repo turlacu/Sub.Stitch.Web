@@ -1,4 +1,6 @@
 import { Check, X, ShieldAlert, Sparkles } from "lucide-react";
+import { motion } from "motion/react";
+import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function ProblemSection() {
@@ -12,7 +14,7 @@ export default function ProblemSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header copy */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <Reveal className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="inline-block mb-2 text-xs font-bold tracking-widest text-[#F472B6] uppercase font-mono px-3 py-1 bg-[#F472B6]/10 rounded-full border border-[#F472B6]/20">
             {content.problem.badge}
           </span>
@@ -22,13 +24,20 @@ export default function ProblemSection() {
           <p className="text-base sm:text-lg text-[#94A3B8] font-light leading-relaxed">
             {content.problem.subtitle}
           </p>
-        </div>
+        </Reveal>
 
         {/* Side-by-side comparison cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch pt-4">
           
           {/* Card 1: Basic Machine Translator */}
-          <div className="bg-[#090D1A] rounded-2xl border border-[#334155]/40 p-6 sm:p-8 flex flex-col justify-between hover:border-red-500/20 transition-all duration-300 relative group overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0, x: -18 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            whileHover={{ y: -4 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="bg-[#090D1A] rounded-2xl border border-[#334155]/40 p-6 sm:p-8 flex flex-col justify-between hover:border-red-500/20 transition-all duration-300 relative group overflow-hidden"
+          >
             <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 rounded-full blur-2xl group-hover:bg-red-500/10 transition-colors" />
             <div className="space-y-6">
               
@@ -57,17 +66,24 @@ export default function ProblemSection() {
             <div className="mt-8 pt-4 border-t border-[#334155]/20 text-xs text-red-400 font-mono text-center">
               {content.problem.basicCard.footer}
             </div>
-          </div>
+          </motion.div>
 
           {/* Card 2: Sub.Stitch Translator */}
-          <div className="bg-[#1E293B]/20 rounded-2xl border border-[#334155] p-6 sm:p-8 flex flex-col justify-between hover:border-[#F472B6]/60 transition-all duration-300 relative group overflow-hidden shadow-xl shadow-pink-950/5">
+          <motion.div
+            initial={{ opacity: 0, x: 18 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            whileHover={{ y: -5 }}
+            viewport={{ once: true, amount: 0.25 }}
+            transition={{ duration: 0.4, delay: 0.06, ease: "easeOut" }}
+            className="bg-[#1E293B]/20 rounded-2xl border border-[#334155] p-6 sm:p-8 flex flex-col justify-between hover:border-[#F472B6]/60 transition-all duration-300 relative group overflow-hidden shadow-xl shadow-pink-950/5"
+          >
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr from-[#F472B6]/10 to-[#6366F1]/10 rounded-full blur-2xl group-hover:from-[#F472B6]/20 transition-all" />
             <div className="space-y-6">
               
               {/* Card Label */}
               <div className="flex items-center gap-3">
                 <div className="p-2.5 rounded-xl bg-gradient-to-tr from-[#F472B6]/10 to-[#6366F1]/10 border border-[#F472B6]/30 text-[#F472B6]">
-                  <Sparkles className="w-5 h-5 text-[#F472B6]" />
+                  <Sparkles className="w-5 h-5 text-[#F472B6] transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-[#F1F5F9] flex items-center gap-2">
@@ -92,7 +108,7 @@ export default function ProblemSection() {
             <div className="mt-8 pt-4 border-t border-[#334155]/20 text-xs text-emerald-400 font-mono text-center bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
               {content.problem.subaiCard.footer}
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

@@ -1,4 +1,5 @@
 import { Languages, Github, Mail, ArrowUpRight } from "lucide-react";
+import { motion } from "motion/react";
 import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
@@ -28,24 +29,28 @@ export default function Footer() {
               {content.footer.desc}
             </p>
             <div className="flex items-center gap-3 pt-2 text-[#94A3B8]">
-              <a
+              <motion.a
                 id="footer-github-link"
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
                 className="hover:text-white transition-colors"
                 title="GitHub"
               >
                 <Github className="w-4 h-4" />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 id="footer-mail-link"
                 href="mailto:turlacu@live.com"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.94 }}
                 className="hover:text-white transition-colors"
                 title="Email Support"
               >
                 <Mail className="w-4 h-4" />
-              </a>
+              </motion.a>
             </div>
           </div>
 
@@ -68,17 +73,19 @@ export default function Footer() {
               <p className="text-xs text-[#94A3B8] font-sans font-light leading-relaxed">
                 {content.footer.appDesc}
               </p>
-              <a
+              <motion.a
                 id="footer-app-cta"
                 href="https://studio.substitch.app/"
                 target="_blank"
                 referrerPolicy="no-referrer"
                 rel="noopener noreferrer"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-[#020617] bg-[#F1F5F9] hover:bg-white hover:shadow-lg transition-all duration-200"
               >
                 <span>{content.footer.appCta}</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
+              </motion.a>
             </div>
             
             {/* Status light */}

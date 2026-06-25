@@ -12,6 +12,7 @@ export default function Navbar() {
   const { currentLanguage, setLanguage, languages, t } = useLanguage();
 
   const activeLanguage = languages.find(l => l.code === currentLanguage) || languages[0];
+  const getLanguageIdentifier = (code: string) => code.split("-").pop()?.toUpperCase() || code.toUpperCase();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,7 +111,8 @@ export default function Navbar() {
                                  : "text-[#94A3B8] hover:text-[#F1F5F9] hover:bg-[#1E293B]/40"
                              }`}
                            >
-                             <div className="flex items-center">
+                             <div className="flex items-center gap-2">
+                               <span className="font-sans text-[#F9A8D4]">{getLanguageIdentifier(lang.code)}</span>
                                <span className="font-sans">{lang.nativeName}</span>
                              </div>
                              {currentLanguage === lang.code && (
@@ -218,7 +220,8 @@ export default function Navbar() {
                                 : "text-[#94A3B8] hover:text-[#E2E8F0]"
                             }`}
                           >
-                            <div className="flex items-center">
+                            <div className="flex items-center gap-2">
+                              <span className="font-sans text-[#F9A8D4]">{getLanguageIdentifier(lang.code)}</span>
                               <span>{lang.nativeName}</span>
                             </div>
                           </button>

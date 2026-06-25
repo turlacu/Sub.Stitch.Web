@@ -62,10 +62,7 @@ export const PORTUGUESE: MarketingContent = {
     title: "Projetado para localização profissional",
     subtitle: "Os tradutores normais tratam o texto de forma isolada e fria. O Sub.Stitch trata sua legenda como uma obra cinematográfica viva.",
     items: [
-      { id: "context", title: "Motor de Contexto IA", description: "Lê as linhas anteriores para manter o humor e a coerência natural dos diálogos.", badge: "Único" },
-      { id: "batch", title: "Livre de Formatos", description: "Suporte para todos os formatos padronizados: .SRT, .VTT, .TXT ou .SUB.", badge: "Universal" },
       { id: "timing", title: "Bloqueio de Sincronia", description: "Os milissegundos originais de marcação de tempo nunca mudam.", badge: "Estrito" },
-      { id: "length", title: "Controle de Linhas", description: "Controla as saídas de texto de forma a caber visualmente na leitura de tela.", badge: "UX-Aware" },
       { id: "preview", title: "Visualização Rápida", description: "Compare as linhas sugeridas ao lado do texto original antes de validar.", badge: "Smart preview" },
       { id: "creator", title: "Foco em Criadores", description: "Ideal para produtores independentes, canais de YouTube e agências.", badge: "Formatado" }
     ],

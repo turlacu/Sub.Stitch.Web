@@ -62,10 +62,7 @@ export const SPANISH: MarketingContent = {
     title: "Diseñado para localización premium",
     subtitle: "Los traductores estándar tratan el texto como aburridos folios de documentos. Sub.Stitch trata tus subtítulos como un ecosistema vivo de cine.",
     items: [
-      { id: "context", title: "Motor de Contexto IA", description: "Lee las líneas anteriores para capturar el humor, las relaciones y la fluidez.", badge: "Único" },
-      { id: "batch", title: "Libertad de Formatos", description: "Soporta subtítulos en todos los formatos del sector: .SRT, .VTT, .TXT o .SUB.", badge: "Universal" },
       { id: "timing", title: "Protección de Tiempos", description: "Los tiempos originales de milisegundos se quedan completamente cerrados.", badge: "Blindado" },
-      { id: "length", title: "Optimización de Longitud", description: "Configura las oraciones para que tengan un número cómodo de caracteres por segundo.", badge: "UX-Aware" },
       { id: "preview", title: "Modo de Vista Previa", description: "Vea y revise las líneas traducidas lado a lado con el texto de origen.", badge: "Smart preview" },
       { id: "creator", title: "Flujo para Creadores", description: "Creado específicamente para cineastas profesionales, creadores de YouTube y productoras.", badge: "A medida" }
     ],
