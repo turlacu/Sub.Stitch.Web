@@ -43,11 +43,11 @@ export default function Footer() {
               </motion.a>
               <motion.a
                 id="footer-mail-link"
-                href="mailto:turlacu@live.com"
+                href="#contact"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.94 }}
                 className="hover:text-white transition-colors"
-                title="Email Support"
+                title="Contact"
               >
                 <Mail className="w-4 h-4" />
               </motion.a>
@@ -104,7 +104,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-[#334155]/40 text-center flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-[#94A3B8]">
           <p>&copy; {currentYear} {content.footer.copyright}</p>
           <div className="flex gap-4">
-            <a href="https://subtitletranslate.turlacu.ro/" className="hover:underline">subtitletranslate.turlacu.ro</a>
+            <a href="https://substitch.app/" className="hover:underline">substitch.app</a>
             <span>&bull;</span>
             <a href="https://studio.substitch.app/" className="hover:underline">studio.substitch.app</a>
           </div>

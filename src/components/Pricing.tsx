@@ -2,6 +2,7 @@ import { Check, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
+import { revealViewport, smoothItemTransition } from "../lib/motionPresets";
 
 export default function Pricing() {
   const { marketingContent: content, t } = useLanguage();
@@ -35,11 +36,11 @@ export default function Pricing() {
               <motion.div
                 key={tier.id}
                 id={`pricing-tier-${tier.id}`}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 12, scale: 0.985, filter: "blur(5px)" }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                 whileHover={{ y: isHighlighted ? -7 : -5 }}
-                viewport={{ once: true, amount: 0.24 }}
-                transition={{ duration: 0.35, delay: index * 0.06, ease: "easeOut" }}
+                viewport={revealViewport}
+                transition={smoothItemTransition(index * 0.08)}
                 className={`relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 hover:scale-[1.02] ${
                   isHighlighted
                     ? "bg-[#1E293B]/40 border-2 border-[#F472B6]/80 shadow-[0_0_30px_rgba(244,114,182,0.15)]"

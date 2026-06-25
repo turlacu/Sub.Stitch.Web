@@ -2,6 +2,7 @@ import { Check, X, ShieldAlert, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
 import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
+import { revealViewport, smoothItemTransition } from "../lib/motionPresets";
 
 export default function ProblemSection() {
   const { marketingContent: content } = useLanguage();
@@ -31,11 +32,11 @@ export default function ProblemSection() {
           
           {/* Card 1: Basic Machine Translator */}
           <motion.div
-            initial={{ opacity: 0, x: -18 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: -10, scale: 0.985, filter: "blur(5px)" }}
+            whileInView={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
             whileHover={{ y: -4 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            viewport={revealViewport}
+            transition={smoothItemTransition()}
             className="bg-[#090D1A] rounded-2xl border border-[#334155]/40 p-6 sm:p-8 flex flex-col justify-between hover:border-red-500/20 transition-all duration-300 relative group overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 rounded-full blur-2xl group-hover:bg-red-500/10 transition-colors" />
@@ -70,11 +71,11 @@ export default function ProblemSection() {
 
           {/* Card 2: Sub.Stitch Translator */}
           <motion.div
-            initial={{ opacity: 0, x: 18 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: 10, scale: 0.985, filter: "blur(5px)" }}
+            whileInView={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
             whileHover={{ y: -5 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.4, delay: 0.06, ease: "easeOut" }}
+            viewport={revealViewport}
+            transition={smoothItemTransition(0.08)}
             className="bg-[#1E293B]/20 rounded-2xl border border-[#334155] p-6 sm:p-8 flex flex-col justify-between hover:border-[#F472B6]/60 transition-all duration-300 relative group overflow-hidden shadow-xl shadow-pink-950/5"
           >
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-tr from-[#F472B6]/10 to-[#6366F1]/10 rounded-full blur-2xl group-hover:from-[#F472B6]/20 transition-all" />

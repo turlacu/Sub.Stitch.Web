@@ -1,4 +1,5 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
+import { TRANSLATIONS } from "../data/translations";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -7,6 +8,15 @@ interface ErrorBoundaryProps {
 interface ErrorBoundaryState {
   hasError: boolean;
 }
+
+const getSavedLanguage = () => {
+  try {
+    const saved = localStorage.getItem("subai-site-lang");
+    return saved && TRANSLATIONS[saved] ? saved : "en";
+  } catch {
+    return "en";
+  }
+};
 
 export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   declare props: Readonly<ErrorBoundaryProps>;
@@ -23,19 +33,17 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
 
   render() {
     if (this.state.hasError) {
+      const dictionary = TRANSLATIONS[getSavedLanguage()] || TRANSLATIONS.en;
+
       return (
         <main className="min-h-screen bg-[#020617] text-[#F1F5F9] flex items-center justify-center px-6">
-          <div className="max-w-md text-center space-y-4">
-            <p className="text-xs font-mono uppercase tracking-widest text-[#F472B6]">Sub.Stitch</p>
-            <h1 className="text-2xl font-bold">The website could not render.</h1>
-            <p className="text-sm text-[#94A3B8]">
-              Please refresh the page or open the subtitle app directly.
-            </p>
+          <div className="max-w-md text-center space-y-6">
+            <h1 className="text-2xl font-bold tracking-tight">Sub.Stitch</h1>
             <a
               href="https://studio.substitch.app/"
               className="inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#F472B6] to-[#6366F1] px-5 py-3 text-sm font-bold text-slate-950"
             >
-              Open App
+              {dictionary.openApp}
             </a>
           </div>
         </main>

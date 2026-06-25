@@ -63,7 +63,7 @@ export const SPANISH: MarketingContent = {
     subtitle: "Los traductores estándar tratan el texto como aburridos folios de documentos. Sub.Stitch trata tus subtítulos como un ecosistema vivo de cine.",
     items: [
       { id: "timing", title: "Protección de Tiempos", description: "Los tiempos originales de milisegundos se quedan completamente cerrados.", badge: "Blindado" },
-      { id: "preview", title: "Modo de Vista Previa", description: "Vea y revise las líneas traducidas lado a lado con el texto de origen.", badge: "Smart preview" },
+      { id: "preview", title: "Modo de Vista Previa", description: "Vea y revise las líneas traducidas lado a lado con el texto de origen.", badge: "Vista previa inteligente" },
       { id: "creator", title: "Flujo para Creadores", description: "Creado específicamente para cineastas profesionales, creadores de YouTube y productoras.", badge: "A medida" }
     ],
     prevLine: "Contexto de línea anterior:",
@@ -138,11 +138,12 @@ export const SPANISH: MarketingContent = {
     feedbackDesc: "Cuéntanos sobre funciones que te faltan, API o mejoras en el portal.",
     enterpriseTitle: "Servicio Enterprise",
     enterpriseDesc: "Solicita rendimiento y servidores dedicados de alto uso para plataformas de vídeo.",
-    emailSign: "Contacto: turlacu@live.com",
+    emailSign: "Los datos de contacto están disponibles mediante el botón de correo.",
     emailBlockLabel: "Correo directo",
     emailBlockTitle: "Envíanos los detalles desde tu bandeja de entrada.",
     emailBlockDesc: "Incluye el tipo de archivo, volumen aproximado de subtítulos, idiomas objetivo y cualquier requisito del flujo de trabajo.",
     emailBlockAddressLabel: "Dirección de contacto",
+    emailBlockPrivacyNote: "Usa el botón de abajo para abrir tu cliente de correo.",
     emailBlockCta: "Enviar correo a Sub.Stitch",
     successTitle: "¡Mensaje Enviado con Éxito!",
     successDesc: "Muchas gracias. Tu correo ha sido entregado a nuestra mesa de operaciones. ¡Te responderemos muy pronto!",

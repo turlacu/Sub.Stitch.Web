@@ -63,7 +63,7 @@ export const ITALIAN: MarketingContent = {
     subtitle: "I traduttori standard vedono i sottotitoli come testi piatti. Sub.Stitch li elabora come una trama cinematografica in movimento.",
     items: [
       { id: "timing", title: "Protezione Tempo", description: "I millisecondi originari di calettatura rimangono stabili, senza drift.", badge: "Protetto" },
-      { id: "preview", title: "Anteprima in Tempo Reale", description: "Leggi la riga tradotta accanto a quella originale prima di validare.", badge: "Smart preview" },
+      { id: "preview", title: "Anteprima in Tempo Reale", description: "Leggi la riga tradotta accanto a quella originale prima di validare.", badge: "Anteprima intelligente" },
       { id: "creator", title: "Workflow Creatori", description: "Progettato su misura per agenzie e canali YouTube professionisti.", badge: "Premium" }
     ],
     prevLine: "Contesto della riga precedente:",
@@ -138,11 +138,12 @@ export const ITALIAN: MarketingContent = {
     feedbackDesc: "Condividi con noi criticità, idee, suggerimenti e requisiti sulle funzionalità.",
     enterpriseTitle: "Uso Enterprise",
     enterpriseDesc: "Ottieni server dedicati VIP ad elevate prestazioni per i tuoi flussi multimediali.",
-    emailSign: "Contatto: turlacu@live.com",
+    emailSign: "I dettagli di contatto sono disponibili tramite il pulsante e-mail.",
     emailBlockLabel: "E-mail diretta",
     emailBlockTitle: "Invia i dettagli dalla tua casella e-mail.",
     emailBlockDesc: "Includi il tipo di file, il volume approssimativo di sottotitoli, le lingue target e qualsiasi vincolo di workflow.",
     emailBlockAddressLabel: "Indirizzo di contatto",
+    emailBlockPrivacyNote: "Usa il pulsante qui sotto per aprire il tuo client email.",
     emailBlockCta: "Invia un'e-mail a Sub.Stitch",
     successTitle: "Messaggio inoltrato con successo!",
     successDesc: "Ti ringraziamo per l'interesse. Abbiamo ricevuto la tua scheda. Ti risponderemo prontamente!",

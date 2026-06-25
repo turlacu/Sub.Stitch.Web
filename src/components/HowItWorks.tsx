@@ -2,6 +2,7 @@ import { FileUp, Sliders, Cpu, FileCheck } from "lucide-react";
 import { motion } from "motion/react";
 import Reveal from "./Reveal";
 import { useLanguage } from "../context/LanguageContext";
+import { revealViewport, smoothItemTransition } from "../lib/motionPresets";
 
 const icons = [FileUp, Sliders, Cpu, FileCheck];
 
@@ -43,12 +44,12 @@ export default function HowItWorks() {
                 <motion.div
                   key={index}
                   id={`how-it-works-step-${index}`}
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 12, scale: 0.985, filter: "blur(5px)" }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                   whileHover={{ y: -5 }}
                   whileTap={{ scale: 0.985 }}
-                  viewport={{ once: true, amount: 0.28 }}
-                  transition={{ duration: 0.35, delay: index * 0.04, ease: "easeOut" }}
+                  viewport={revealViewport}
+                  transition={smoothItemTransition(index * 0.07)}
                   className="group flex flex-col items-center lg:items-start text-center lg:text-left space-y-4 bg-[#1E293B]/20 p-6 rounded-2xl border border-[#334155]/40 hover:border-[#F472B6]/40 hover:bg-[#1E293B]/30 transition-all duration-300 hover:scale-[1.02] shadow-lg"
                 >
                   {/* Step Header details / Icon container */}

@@ -5,8 +5,16 @@ import { useLanguage } from "../context/LanguageContext";
 
 export default function Contact() {
   const { marketingContent: content } = useLanguage();
-  const contactEmail = "turlacu@live.com";
-  const mailtoHref = `mailto:${contactEmail}?subject=${encodeURIComponent("Sub.Stitch website inquiry")}`;
+  const openEmailClient = () => {
+    const scheme = String.fromCharCode(109, 97, 105, 108, 116, 111);
+    const address = [
+      [116, 117, 114, 108, 97, 99, 117],
+      [108, 105, 118, 101],
+      [99, 111, 109]
+    ].map((part) => String.fromCharCode(...part));
+
+    window.location.href = `${scheme}:${address[0]}@${address[1]}.${address[2]}?subject=${encodeURIComponent("Sub.Stitch website inquiry")}`;
+  };
 
   return (
     <section id="contact" className="py-24 bg-[#090D1A] relative border-b border-[#334155]/20">
@@ -66,7 +74,7 @@ export default function Contact() {
             {/* Email signature */}
             <div className="pt-8 border-t border-[#334155]/40 text-[11px] font-mono text-[#94A3B8] flex items-center gap-1.5 mt-8 md:mt-0">
               <HelpCircle className="w-3.5 h-3.5 text-pink-400" />
-              <span>{content.contact.emailSign}</span>
+              <span>{content.contact.emailBlockLabel}</span>
             </div>
           </div>
 
@@ -90,23 +98,21 @@ export default function Contact() {
                 <p className="text-[11px] uppercase tracking-widest font-mono text-[#64748B] mb-2">
                   {content.contact.emailBlockAddressLabel}
                 </p>
-                <a
-                  href={mailtoHref}
-                  className="text-lg sm:text-xl font-bold text-[#F1F5F9] hover:text-[#F472B6] transition-colors break-all"
-                >
-                  {contactEmail}
-                </a>
+                <p className="text-xs font-light text-[#94A3B8] leading-relaxed">
+                  {content.contact.emailBlockPrivacyNote}
+                </p>
               </div>
 
-              <motion.a
+              <motion.button
                 id="contact-email-link"
-                href={mailtoHref}
+                type="button"
+                onClick={openEmailClient}
                 whileTap={{ scale: 0.98 }}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold rounded-xl text-slate-950 bg-gradient-to-r from-[#F472B6] to-[#6366F1] shadow-[0_0_15px_rgba(244,114,182,0.25)] hover:shadow-[0_0_20px_rgba(244,114,182,0.45)] hover:scale-[1.01] transition-all duration-300"
               >
                 <span>{content.contact.emailBlockCta}</span>
                 <ArrowUpRight className="w-4 h-4 text-slate-950" />
-              </motion.a>
+              </motion.button>
             </div>
           </div>
 

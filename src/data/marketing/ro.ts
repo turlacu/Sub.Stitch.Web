@@ -63,7 +63,7 @@ export const ROMANIAN: MarketingContent = {
     subtitle: "Traducătoarele standard tratează textul ca pe niște documente simple. Sub.Stitch tratează subtitrarea ca pe un ecosistem cinematografic viu.",
     items: [
       { id: "timing", title: "Protecție Timp", description: "Intervalele originale de milisecunde sunt blocate exact ca constante la încărcare.", badge: "Imbatabil" },
-      { id: "preview", title: "Mod Previzualizare Directă", description: "Iterați previzualizând liniile traduse una lângă alta cu textul original.", badge: "Smart preview" },
+      { id: "preview", title: "Mod Previzualizare Directă", description: "Iterați previzualizând liniile traduse una lângă alta cu textul original.", badge: "Previzualizare inteligentă" },
       { id: "creator", title: "Flux pentru Creatori", description: "Creat special pentru cerințele realizatorilor de filme, creatorilor YouTube și caselor de producție.", badge: "Personalizat" }
     ],
     prevLine: "Contextul liniei anterioare:",
@@ -138,11 +138,12 @@ export const ROMANIAN: MarketingContent = {
     feedbackDesc: "Spuneți-ne despre funcțiile care lipsesc, idei de API-uri sau sugestii.",
     enterpriseTitle: "Planuri Enterprise",
     enterpriseDesc: "Solicitați servere dedicate cu înaltă performanță pentru platforme video.",
-    emailSign: "Contact: turlacu@live.com",
+    emailSign: "Detaliile de contact sunt disponibile prin butonul de e-mail.",
     emailBlockLabel: "E-mail direct",
     emailBlockTitle: "Trimite detaliile din inboxul tău.",
     emailBlockDesc: "Include tipul de fișier, volumul aproximativ de subtitrări, limbile țintă și orice cerințe de workflow.",
     emailBlockAddressLabel: "Adresă de contact",
+    emailBlockPrivacyNote: "Folosește butonul de mai jos pentru a deschide clientul tău de e-mail.",
     emailBlockCta: "Trimite e-mail către Sub.Stitch",
     successTitle: "Mesajul a fost Trimis!",
     successDesc: "Vă mulțumim. Solicitarea dvs. a fost trimisă direct la biroul nostru de asistență. Vă vom răspunde în curând!",
@@ -164,7 +165,7 @@ export const ROMANIAN: MarketingContent = {
   },
   footer: {
     desc: "Motor de traducere a subtitrărilor bazat pe inteligență artificială, conceput special pentru cineaști, creatori de conținut și echipa de localizare.",
-    shortcuts: "Website Portal",
+    shortcuts: "Portal website",
     appHeader: "Aplicație Subtitrări",
     appDesc: "Sunteți gata să traduceți fișiere SRT acum? Lansați aplicația imediat.",
     appCta: "Deschide Aplicația",

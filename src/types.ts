@@ -130,6 +130,7 @@ export interface MarketingContent {
     emailBlockTitle: string;
     emailBlockDesc: string;
     emailBlockAddressLabel: string;
+    emailBlockPrivacyNote: string;
     emailBlockCta: string;
     successTitle: string;
     successDesc: string;

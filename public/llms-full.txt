@@ -62,5 +62,5 @@ Absolute security. All file uploads are processed securely in temporary server m
 
 ## Contact & Inquiries
 For further custom integrations, high-performing dedicated API slots, or custom layouts:
-- Primary Node Email: turlacu@live.com
+- Contact: use the website contact action
 - Main Portal: https://studio.substitch.app/

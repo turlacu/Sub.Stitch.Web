@@ -63,7 +63,7 @@ export const PORTUGUESE: MarketingContent = {
     subtitle: "Os tradutores normais tratam o texto de forma isolada e fria. O Sub.Stitch trata sua legenda como uma obra cinematográfica viva.",
     items: [
       { id: "timing", title: "Bloqueio de Sincronia", description: "Os milissegundos originais de marcação de tempo nunca mudam.", badge: "Estrito" },
-      { id: "preview", title: "Visualização Rápida", description: "Compare as linhas sugeridas ao lado do texto original antes de validar.", badge: "Smart preview" },
+      { id: "preview", title: "Visualização Rápida", description: "Compare as linhas sugeridas ao lado do texto original antes de validar.", badge: "Pré-visualização inteligente" },
       { id: "creator", title: "Foco em Criadores", description: "Ideal para produtores independentes, canais de YouTube e agências.", badge: "Formatado" }
     ],
     prevLine: "Contexto do frame anterior:",
@@ -138,11 +138,12 @@ export const PORTUGUESE: MarketingContent = {
     feedbackDesc: "Deixe ideias de melhorias de painel, sugestões ou integrações API.",
     enterpriseTitle: "Planos Corporativos",
     enterpriseDesc: "Solicite velocidade de topo e poder de processamento VIP para grandes volumes.",
-    emailSign: "Contato: turlacu@live.com",
+    emailSign: "Os detalhes de contato estão disponíveis pelo botão de e-mail.",
     emailBlockLabel: "E-mail direto",
     emailBlockTitle: "Envie os detalhes pelo seu e-mail.",
     emailBlockDesc: "Inclua o tipo de arquivo, volume aproximado de legendas, idiomas de destino e qualquer requisito de fluxo de trabalho.",
     emailBlockAddressLabel: "Endereço de contato",
+    emailBlockPrivacyNote: "Use o botão abaixo para abrir seu cliente de e-mail.",
     emailBlockCta: "Enviar e-mail para Sub.Stitch",
     successTitle: "Mensagem Enviada!",
     successDesc: "Muito obrigado. Suas dúvidas foram entregues ao nosso time operacional. Entraremos em contato assim que possível!",

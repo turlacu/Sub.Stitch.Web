@@ -3,6 +3,7 @@ import { HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { motion, AnimatePresence } from "motion/react";
 import Reveal from "./Reveal";
+import { revealViewport, smoothItemTransition, smoothRevealEase } from "../lib/motionPresets";
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -41,11 +42,11 @@ export default function Faq() {
               <motion.div
                 key={index}
                 id={`faq-item-${index}`}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 10, scale: 0.99, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
                 whileHover={{ y: -2 }}
-                viewport={{ once: true, amount: 0.16 }}
-                transition={{ duration: 0.28, delay: index * 0.025, ease: "easeOut" }}
+                viewport={revealViewport}
+                transition={smoothItemTransition(index * 0.04)}
                 className={`bg-[#1E293B]/10 rounded-2xl border transition-all duration-300 ${
                   isOpen
                     ? "border-[#F472B6]/60 bg-[#1E293B]/25 shadow-lg shadow-pink-950/5"
@@ -79,7 +80,7 @@ export default function Faq() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      transition={{ duration: 0.34, ease: smoothRevealEase }}
                       className="overflow-hidden"
                     >
                       <div className="px-5 pb-6 pt-1 sm:px-6 border-t border-[#334155]/30">
